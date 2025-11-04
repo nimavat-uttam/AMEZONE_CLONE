@@ -1,0 +1,396 @@
+body {
+    background: white;
+}
+
+.border6 {
+    border: 1.5px solid transparent;
+    padding: 7px 6px;
+}
+
+.border6:hover {
+    border: 1.8px solid white;
+    border-radius: 2px;
+}
+
+.breadcrum {
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #565656;
+}
+
+.product-display {
+    min-height: 100%;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.product-d-image {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+
+}
+
+.product-main-image {
+    margin-left: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.product-main-image :hover {
+    border: 1.5px solid gray;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.product-main-image {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9900;
+}
+
+.product-main-image:hover {
+    transform: rotateY(0deg);
+    animation: rotate3D 8s infinite linear;
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.product-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-icons :hover {
+    border: 2px solid #007185;
+}
+
+.product-icons img {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.product-d-deatils {
+    margin: 0 30px;
+}
+
+.product-title {
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.brand-store {
+    margin-top: 5px;
+    color: #007185;
+    font-size: 14px;
+}
+
+.product-rating {
+
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-rating div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.u1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.u1 span {
+    color: black;
+    font-size: 0.8rem;
+}
+
+.u1 p {
+    color: #007185;
+
+}
+
+.product-rating p span {
+    color: #fff;
+    background: red;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.product-rating p {
+    color: #007185;
+}
+
+.product-rating h5 {
+    font-size: 0.7;
+    margin-top: 10px;
+    color: black;
+    margin-bottom: 10px;
+
+}
+
+.product-price {
+    margin-top: 5px;
+}
+
+.product-price b {
+    color: black;
+}
+
+.product-price h6 {
+    color: red;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 26px;
+}
+
+.product-price h5,
+a {
+    margin-bottom: 5px;
+}
+
+.product-price p {
+    background: white;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.product-price div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.product-price h2 span {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.product-price h2 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.product-color-selection {
+    margin: 15px 0;
+}
+
+.product-color-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.option {
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 3px;
+    gap: 5px;
+
+    cursor: pointer;
+}
+
+.option:hover {
+    animation: option 0.8s ease;
+    border: 1px solid blue;
+}
+
+@keyframes option {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+.option p {
+    margin-top: 4px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.product-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+.about {
+    margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.about b {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.text {
+    margin-top: 3px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.product-d-purchase {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+    margin-left: 8px;
+}
+
+.product-d-purchase .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-d-purchase .price {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.product-d-purchase .price span {
+    font-size: 26px;
+    padding: 2px;
+}
+
+.product-d-purchase .gap {
+    margin: 15px 0;
+}
+
+.product-d-purchase span {
+    color: #007185;
+    cursor: pointer;
+}
+
+.product-quantity {
+    padding: 8px 5px;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    background: #efefef;
+    border-color: white;
+}
+
+.location p {
+    color: #007185;
+    cursor: pointer;
+}
+
+.product-d-purchase .btn {
+    outline: none;
+    border: none;
+    width: 100%;
+    background: yellow;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.product-stock option {
+    background-color: transparent;
+}
+
+
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(198, 212, 8, 0.5);
+
+}
+
+.product-d-purchase .by {
+    outline: none;
+    border: none;
+    width: 100%;
+    background: #e4890a;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.by:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(159, 127, 22, 0.5);
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    margin-top: 9px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 120px auto;
+    /* p fixed width, span flexible */
+    gap: 10px;
+    align-items: center;
+}
+
+.item p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.item span {
+    margin: 0;
+}
+
+.more-items {
+    display: none;
+}
+
+#seeMore {
+    margin-top: 5px;
+    font-size: 12px;
+    color: blue;
+    cursor: pointer;
+}
+
+.product-d-purchase hr {
+    margin: 20px 0;
+}
+
+.add-list {
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+    text-align: start;
+    background: white;
+}
