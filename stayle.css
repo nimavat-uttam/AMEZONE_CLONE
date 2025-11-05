@@ -1,6 +1,6 @@
     body {
-        background-color: #e2e7e6;
-        
+        background-color: #EAEDED;
+
     }
 
     * {
@@ -82,6 +82,11 @@
         border-radius: 3px;
     }
 
+    .nav-search:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgb(239, 240, 239);
+    }
+
     .search-select {
         background-color: #f3f3f3;
         width: 50px;
@@ -115,90 +120,94 @@
         align-items: center;
         gap: 2px;
         font-weight: 600;
-        
+
     }
-    .lang{
+
+    .lang {
         display: flex;
         align-items: center;
         gap: 2px;
         font-weight: 600;
     }
-    
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
 
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: gray;
-  background-color: inherit;
-  cursor: pointer;
-}
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
 
-/* Dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  border: 1px;
-  border-radius: 10px;
-  background-color: rgb(237, 236, 236);
-  min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    /* Dropdown button */
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: gray;
+        background-color: inherit;
+        cursor: pointer;
+    }
 
-/* Links inside dropdown */
-.dropdown-content a {
-  color: #232f3e;
-  padding: 5px;
-  margin-top: 5px;
-  margin-left: 25px;
-  display: block;
-  
-}
-.dropdown-content p{
-    color: black;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-.dropdown-content label{
-    padding: 10px;
-    color: #0f1111;
-    display: flex;
-    cursor: pointer;
-    margin-top: 10px;
-    position: relative;
-	overflow: hidden;
-    margin-left: 23px;
-    font-size: 0.8rem;
-    
-}
-/* Hover effects */
+    /* Dropdown content */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        border: 1px;
+        border-radius: 10px;
+        background-color: rgb(237, 236, 236);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
-.dropdown-content  label:hover {
-color: #ffa41c;
-}
+    /* Links inside dropdown */
+    .dropdown-content a {
+        color: #232f3e;
+        padding: 5px;
+        margin-top: 5px;
+        margin-left: 25px;
+        display: block;
 
-.dropdown-content  a:hover {
-color: #ffa41c;
-}
+    }
 
-.dropdown-content label span {
-    font-size: 0.6rem;
-}
+    .dropdown-content p {
+        color: black;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
 
-.dropdown:hover .dropdown-content{
-  display: block;
-}
+    .dropdown-content label {
+        padding: 10px;
+        color: #0f1111;
+        display: flex;
+        cursor: pointer;
+        margin-top: 10px;
+        position: relative;
+        overflow: hidden;
+        margin-left: 23px;
+        font-size: 0.8rem;
 
-.dropdown:hover .dropbtn {
-  background-color: black;
-}
+    }
+
+    /* Hover effects */
+
+    .dropdown-content label:hover {
+        color: #ffa41c;
+    }
+
+    .dropdown-content a:hover {
+        color: #ffa41c;
+    }
+
+    .dropdown-content label span {
+        font-size: 0.6rem;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: black;
+    }
 
     .border3 {
         border: 1.5px solid transparent;
@@ -209,7 +218,8 @@ color: #ffa41c;
         border: 1.8px solid white;
         border-radius: 2px;
     }
-     .border1 {
+
+    .border1 {
         border: 1.5px solid transparent;
         padding: 9px 8px;
     }
@@ -236,7 +246,7 @@ color: #ffa41c;
     a {
         font-size: 0.7rem;
     }
-    
+
     .nav-second {
         font: size 0.85rem;
         font-weight: 700;
@@ -251,6 +261,10 @@ color: #ffa41c;
     .nav-cart p {
         margin-left: 11px;
         font-size: 1rem;
+    }
+
+    .nav-cart a {
+        color: white;
     }
 
     .nav-cart {
@@ -356,7 +370,7 @@ color: #ffa41c;
     .box-content {
         margin-left: 1rem;
         margin-right: 1.5rem;
-        
+
     }
 
     .box-content a {
@@ -558,7 +572,8 @@ color: #ffa41c;
     .product-price i {
         color: black;
     }
-    .product-price p{
+
+    .product-price p {
         color: gray;
     }
 
@@ -574,10 +589,11 @@ color: #ffa41c;
         background-color: #37475A;
         color: white;
         border: 2px solid black;
-        text-align: center;border-radius: 2px;
+        text-align: center;
+        border-radius: 2px;
         padding: 1px;
         cursor: pointer;
-        
+
     }
 
     .uttam {
@@ -589,6 +605,6 @@ color: #ffa41c;
         margin-top: 21px;
         margin-bottom: 2px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        
+
 
     }

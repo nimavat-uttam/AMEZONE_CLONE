@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+
+
+<button id="checkout">Checkout</button>
+
+    <script>
+  const checkoutBtn = document.getElementById('checkout');
+  const cartCountElement = document.querySelector('.cart-count');
+
+  checkoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('cartCount'); // 👈 Cart reset karo
+    cartCountElement.textContent = 0; // Display pan 0 karo
+    alert("Thank you! Your cart has been cleared.");
+  });
+</script>
+
+</body>
+</html>
+
+
+
