@@ -265,12 +265,17 @@
 
     .nav-cart a {
         color: white;
+        text-decoration: none;
+    }
+    .nav-cart span{
+        font-size: 1rem;
     }
 
     .nav-cart {
         font-size: 0.85rem;
         font-weight: 400;
         cursor: pointer;
+        margin-bottom: 0px;
 
     }
 

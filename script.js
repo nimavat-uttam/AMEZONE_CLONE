@@ -73,3 +73,11 @@ function toggleItems(elem) {
     }
 }
 
+const checkoutBtn = document.getElementById('checkout');
+  const cartCountElement1 = document.querySelector('.cart-count');
+
+  checkoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('cartCount'); // 👈 Cart reset karo
+    cartCountElement1.textContent = 0; // Display pan 0 karo
+    alert("Thank you! Your cart has been cleared.");
+  });
