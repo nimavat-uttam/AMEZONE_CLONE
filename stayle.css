@@ -267,7 +267,8 @@
         color: white;
         text-decoration: none;
     }
-    .nav-cart span{
+
+    .nav-cart span {
         font-size: 1rem;
     }
 
@@ -450,13 +451,13 @@
         cursor: pointer;
     }
 
-    .card-nested2 img {
+    .card-nested4 img {
         width: 300px;
         height: 140px;
         object-fit: cover;
     }
 
-    .card-nested1 img {
+    .card-nested3 img {
         width: 95px;
         height: 85px;
         object-fit: cover;
@@ -601,7 +602,7 @@
 
     }
 
-    .uttam {
+    .uttam1 {
         margin-top: 2720px;
     }
 
@@ -612,4 +613,345 @@
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* --- GLOBAL FIX: Fixes the massive margin issue from original CSS --- */
+    /* --- યહ લાઇન પૂરે લેઆઉટ કે લિયે હૈ, તાકિ 'Back to Top' બટન હમેશાં સહી જગહ યાની સબસે નીચે દિખે. */
+    /* ------------------------------------------------------------------ */
+
+
+    /* --- Media Query for Tablets and Smaller Laptops (Max Width: 1024px) --- */
+    @media screen and (max-width: 1024px) {
+
+        /* Search Bar Adjustment */
+        .nav-search {
+            width: 500px;
+            /* Search bar width reduced slightly */
+        }
+
+        /* Product Section Adjustment: Switching from 4 columns to 3 columns or more flexible wrap */
+        .shop-section {
+            padding: 0 10px;
+            /* Add some padding to the sides */
+        }
+
+        .box {
+            width: 30%;
+            /* Three boxes per row, allowing space for margins */
+            margin-bottom: 20px;
+            /* box-1 (single image) width is maintained */
+        }
+
+        /* Image Scaling for Tablet: Ensure main box images maintain height/look */
+        .box_img {
+            height: 250px;
+            /* Slightly taller for tablet view */
+            background-size: cover;
+            /* Use cover for better fitting on a wider box, keeping it as original */
+            background-position: center;
+        }
+    }
+
+
+
+
+    /* ----------mobile---------*/
+    /* --- Media Query for Mobile Devices (Max Width: 768px) --- */
+    @media screen and (max-width: 768px) {
+        .uttam1 {
+            /* યહ `!important` આપકે ઓરિજિનલ CSS મેં મોજૂદ બડી માર્જિન (2720px) કો ઓવરરાઇડ કરને કે લિયે હૈ. */
+            margin-top: 8150px;
+            /* અબ યહ કન્ટેન્ટ કે તુરંત બાદ દિખાઈ દેગા. */
+        }
+
+        /* --- Navbar Adjustments --- */
+
+        .navbar {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items in the row */
+        }
+
+        /* ------------------------------ */
+        /* 🔑 ROW 1: Sidebar, Logo, Sign In, Cart */
+        /* ------------------------------ */
+
+        /* Sidebar Icon Placeholder (Requires HTML element with this class) */
+        .nav-sidebar-icon {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            order: -4;
+            /* First item */
+            /* Add a background or border effect for visual appeal if needed */
+            cursor: pointer;
+        }
+
+        /* Logo */
+        .nav-logo {
+            padding: 5px 10px;
+            order: -3;
+            /* Second item */
+        }
+
+        /* Address Box (Hidden on Mobile) */
+        .nav-address {
+            display: none;
+        }
+
+        /* Sign In/Accounts & Lists (Replaced .border3) */
+        .nav-signin {
+            order: -2;
+            /* Third item */
+            padding: 10px 10px;
+            margin-left: auto;
+            /* Pushes the sign-in and cart to the right */
+            /* Re-apply the hover effect from the original CSS (e.g., .border:hover or .border2:hover) */
+        }
+
+        .nav-signin:hover {
+            border: 1.8px solid white;
+            border-radius: 2px;
+        }
+
+        /* Cart */
+        .nav-cart {
+            order: -1;
+            /* Fourth item (Last in Row 1) */
+            padding: 5px 10px;
+        }
+
+        /* ------------------------------ */
+        /* 🔑 ROW 2: Search Bar */
+        /* ------------------------------ */
+
+        .nav-search {
+            width: 95%;
+            order: 0;
+            /* Second Row */
+            margin: 10px auto;
+            /* Centers the search bar */
+            transform: none;
+            /* Disable hover effect on mobile */
+            box-shadow: none;
+            /* Disable hover effect on mobile */
+        }
+
+        /* ------------------------------ */
+        /* 🔑 ROW 3: Language Select */
+        /* ------------------------------ */
+
+        .nav-language {
+            width: 100%;
+            justify-content: center;
+            /* Center the language selection */
+            order: 1;
+            /* Third Row */
+            margin-bottom: 5px;
+        }
+
+        /* Hide redundant elements */
+        .border3,
+        .border1 {
+            display: none;
+        }
+
+        /* --- Panel Adjustments (Secondary Nav) --- */
+        .panel {
+            overflow-x: auto;
+            justify-content: flex-start;
+            height: auto;
+        }
+
+        .panel-ops {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+
+        .panel-ops p {
+            margin: 0 8px;
+            padding: 10px 0;
+        }
+
+        .panel-deals {
+            display: none;
+        }
+
+
+        /* --- Hero Section Adjustments --- */
+        .hero-section {
+            height: 250px;
+            margin: 10px 5px;
+            background-position: center;
+        }
+
+        .hero-msg {
+            margin-top: 150px;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 8px;
+        }
+
+
+        /* --- Shop Section Adjustments (The Product Boxes) --- */
+        /* BOX STACKING: Mobile par ek ke niche ek dikhega */
+        .shop-section {
+            flex-direction: column;
+            /* Stacks vertically */
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .box {
+            width: 95%;
+            /* Full width for mobile */
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Box Content: Layout Preservation */
+        .box-content {
+            /* ઇન્ટરનલ માર્જિન કમ કી ગઈ હૈ */
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            
+        }
+
+        /* Text Size Increase */
+        .box-content p,
+        .box-content h2,
+        .box-content h3 {
+            font-size: 1rem;
+             font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        /* Anchor tags (See More link) */
+        .box-content a {
+            font-size: 1rem;
+            margin-top: 10px;
+            /* Link ke upar thodi jagah */
+            display: block;
+             font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+
+        /* --- IMAGE FIXES FOR MOBILE (Single Image Box) --- */
+
+        .box_img {
+            height: 250px;
+            /* PHOTO SIZE INCREASED */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            /* SPACING INCREASED to push text down */
+        }
+
+
+        /* --- MULTI-IMAGE BOX (4 Images) FIX --- */
+
+        /* Nested Box Containers (Row 1 and Row 2 for 2x2 grid) */
+        .box2-image1,
+        .box2-image2,
+        .box3-image1,
+        .box3-image2 {
+            max-width: 100%;
+            justify-content: space-between;
+            padding: 2px;
+            /* Yahaan is liye margin nahi de rahe hain kyunki hum inner cards ko target karenge */
+        }
+
+        .box4-image1 {
+            margin-top: 1px;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100%;
+            justify-content: space-evenly;
+            padding: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .box4-image2 {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100%;
+            justify-content: space-evenly;
+            padding: 10px;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 1px;
+        }
+
+        .box_img {
+            margin-top: 40px;
+        }
+
+        .box4 .box-content a {
+            margin-top: 35px;
+        }
+
+        .box3 .box-content a {
+            margin-top: 30px;
+        }
+
+        .box1 .box-content a {
+            margin-top: 70px;
+        }
+
+
+        .card-nested4 img {
+            width: 300px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .card-nested3 img {
+            width: 95px;
+            height: 85px;
+            object-fit: cover;
+        }
+
+        /* Target the individual card (which holds the img and its label) to control 2x2 spacing */
+        .card-nested,
+        .card-nested1 {
+            /* 48% width ensures 2 items per row (2x2 grid) */
+            width: 48%;
+            /* Vertical spacing between the first row and the second row of the 2x2 grid */
+            margin-bottom: 15px;
+        }
+
+        /* Ensure actual <img> tags inside nested cards look good and maintain their aspect ratio */
+        .card-nested img,
+        .card-nested2 img,
+        .card-nested1 img {
+            object-fit: contain;
+            width: 100%;
+            /* Now takes full 48% width of its parent (.card-nested) */
+            height: 120px;
+            /* Increased height for better visibility */
+        }
+
+        /* --- Sliders (Row 3, 5, 7) Adjustments --- */
+        .products-slider{
+font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .products-slider,
+        .uttam-slider,
+        .uttam,
+        .products-slider-price {
+            margin: 10px 5px;
+            padding: 10px;
+            
+        }
     }
