@@ -61,6 +61,17 @@ window.addEventListener('storage', (event) => {
 });
 
 
+ /* Sidebar control with JavaScript */
+        function openNav() {
+            // मोबाइल पर 75% चौड़ाई
+            document.getElementById("mySidebar").style.width = "75%"; 
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+
 /* see more toggle*/
 function toggleItems(elem) {
     const moreItems = document.querySelector('.more-items');
@@ -81,3 +92,4 @@ const checkoutBtn = document.getElementById('checkout');
     cartCountElement1.textContent = 0; // Display pan 0 karo
     alert("Thank you! Your cart has been cleared.");
   });
+  

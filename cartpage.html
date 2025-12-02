@@ -6,11 +6,500 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
+    <style>
+/* --- Cart Page Styles --- */
+
+.cart-page-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for the main content area */
+    border-radius: 8px;
+}
+
+.cart-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cart-header h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.cart-header p {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.cart-main-content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left Section: Items List */
+.cart-items-list {
+    flex-grow: 1;
+    min-width: 60%;
+}
+
+.cart-item-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    /* border-bottom: 1px solid #eee; */
+}
+
+.item-details {
+    display: flex;
+    gap: 20px;
+}
+
+.item-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain; /* ensures image fits without cropping */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.item-info h3 {
+    font-size: 1.1rem;
+    color: #007185;
+    margin-bottom: 5px;
+}
+
+.item-info h3:hover {
+    color: #C7511F; /* Amazon Link hover color */
+    cursor: pointer;
+}
+
+.in-stock {
+    color: #007600;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.eligible {
+    font-size: 0.8rem;
+}
+
+.gift-option {
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.qty-select {
+    padding: 5px 10px;
+    border-radius: 7px;
+    background: #f0f2f2;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    color: #007185;
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 0.85rem;
+}
+
+.action-button:hover {
+    text-decoration: underline;
+    color: #C7511F;
+}
+
+.action-divider {
+    color: #ddd;
+    padding: 0 5px;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.cart-divider {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+.subtotal-summary-bottom {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+
+/* Right Section: Checkout Summary */
+.cart-checkout-summary {
+    width: 300px;
+    background-color: #f0f2f2; /* Light gray box for checkout */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: fit-content;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.delivery-message {
+    color: #007600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.subtotal-heading {
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.total-amount {
+    font-weight: 700;
+}
+
+.proceed-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffc400; /* Amazon's primary button color */
+    border: 1px solid #ffae00;
+    border-radius: 7px;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.proceed-button:hover {
+    background-color: #ffb800;
+}
+
+.emi-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7f9fa; 
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    color: #111;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+/* --- Responsive Adjustments for Mobile --- */
+@media screen and (max-width: 768px) {
+    .cart-main-content {
+        flex-direction: column; /* Stacks vertically on mobile/tablet */
+    }
+
+    .cart-checkout-summary {
+        width: 100%; /* Full width for the summary box */
+        order: -1; /* Summary box ko sabse upar laate hain */
+    }
+
+    .item-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .cart-item-card {
+        flex-direction: column; /* Items stack horizontally, now vertical on mobile */
+    }
+    
+    .item-price {
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .subtotal-summary-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+/* --- Footer Styles --- */
+
+/* Back to Top (Your existing style is used, making it full width) */
+.back-to-top {
+    /* height: 100%; width: 100%; background-color: #37475A; color: white; */
+    height: 50px; /* हाइट थोड़ी कम कर दी */
+    background-color: #37475a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+}
+
+/* 2. Links Section (foot-panel2) */
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 300px; /* डेस्कटॉप के लिए हाइट */
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.foot-panel2 ul {
+    /* Default spacing */
+    margin-right: 20px;
+}
+
+.foot-panel2 p {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.foot-panel2 a {
+    display: block; /* लिंक को एक के नीचे एक दिखाने के लिए */
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.foot-panel2 a:hover {
+    text-decoration: underline;
+}
+
+/* 3. Final Footer (foot-panel3) */
+.foot-panel3 {
+    background-color: #222f3d;
+    color: white;
+    border-top: 0.5px solid #3a4553;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-panel3 .logo {
+    /* Amazon logo image should be set here */
+    background-image: url("amazon_logo.png"); /* Replace with actual logo path */
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+}
+
+.foot-panel3 .language-selector {
+    margin-left: 50px;
+    padding: 7px 10px;
+    border: 1px solid #848888;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* 4. Final Copyright Panel (foot-panel4) */
+.foot-panel4 {
+    background-color: #0f1111;
+    color: white;
+    height: 80px;
+    font-size: 0.75rem;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.foot-panel4 .pages a {
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #dddddd;
+}
+
+.foot-panel4 .pages a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel4 .copyright {
+    padding-top: 5px;
+}
+
+
+    
+        </style>
 </head>
 <body>
 
 
+
+<div class="cart-page-container">
+    <div class="cart-header">
+        <h1>Shopping Cart</h1>
+        <p>Price</p>
+    </div>
+
+    <div class="cart-main-content">
+        <div class="cart-items-list">
+            
+            <div class="cart-item-card">
+                <div class="item-details">
+                    <img src="box-1_1.jpg" alt="Product 1" class="item-img">
+                    <div class="item-info">
+                        <h3> - Natural Titanium</h3>
+                        <p class="in-stock">In Stock</p>
+                        <p class="eligible">Eligible for FREE Shipping</p>
+                        <p class="gift-option">
+                            <input type="checkbox"> This will be a gift
+                        </p>
+                        <div class="item-actions">
+                            <select class="qty-select">
+                                <option value="1">Qty: 1</option>
+                                <option value="2">Qty: 2</option>
+                                <option value="3">Qty: 3</option>
+                            </select>
+                            <span class="action-divider">|</span>
+                            <button class="action-button">Delete</button>
+                            <span class="action-divider">|</span>
+                            <button class="action-button">Save for later</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-price">
+                    $1,199.00
+                </div>
+            </div>
+            
+            <hr class="cart-divider">
+
+            <div class="cart-item-card">
+                <div class="item-details">
+                    <img src="box-3-3.jpg" alt="Product 2" class="item-img">
+                    <div class="item-info">
+                        <h3>New Launch - Noise Buds VS102 Neo TWS Earbuds (Black)</h3>
+                        <p class="in-stock">In Stock</p>
+                        <p class="eligible">Eligible for FREE Shipping</p>
+                        <p class="gift-option">
+                            <input type="checkbox"> This will be a gift
+                        </p>
+                        <div class="item-actions">
+                            <select class="qty-select">
+                                <option value="1">Qty: 1</option>
+                                <option value="2">Qty: 2</option>
+                            </select>
+                            <span class="action-divider">|</span>
+                            <button class="action-button">Delete</button>
+                            <span class="action-divider">|</span>
+                            <button class="action-button">Save for later</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-price">
+                    $19.99
+                </div>
+            </div>
+
+            <div class="subtotal-summary-bottom">
+                Subtotal (2 items): <span class="total-amount">$1,218.99</span>
+            </div>
+
+        </div>
+
+        <div class="cart-checkout-summary">
+            <p class="delivery-message">
+                <i class="fa-solid fa-check-circle"></i> Your order is eligible for Free Delivery.
+            </p>
+            <h2 class="subtotal-heading">
+                Subtotal (2 items): <span class="total-amount">$1,218.99</span>
+            </h2>
+            <button class="proceed-button">Proceed to Buy</button>
+            <button class="emi-button">EMI Available</button>
+        </div>
+    </div>
+</div>
 <button id="checkout">Checkout</button>
+<footer>
+    <div class="back-to-top">
+        <p>Back to top</p>
+    </div>
+
+    <div class="foot-panel2">
+        <ul>
+            <p>Get to Know Us</p>
+            <a>Careers</a>
+            <a>Blog</a>
+            <a>About Amazon</a>
+            <a>Investor Relations</a>
+            <a>Amazon Devices</a>
+            <a>Amazon Science</a>
+        </ul>
+        <ul>
+            <p>Make Money with Us</p>
+            <a>Sell products on Amazon</a>
+            <a>Sell on Amazon Business</a>
+            <a>Sell apps on Amazon</a>
+            <a>Become an Affiliate</a>
+            <a>Advertise Your Products</a>
+            <a>Self-Publish with Us</a>
+            <a>Host an Amazon Hub</a>
+            <a>See More Earning Opportunities</a>
+        </ul>
+        <ul>
+            <p>Amazon Payment Products</p>
+            <a>Amazon Business Card</a>
+            <a>Shop with Points</a>
+            <a>Reload Your Balance</a>
+            <a>Amazon Currency Converter</a>
+        </ul>
+        <ul>
+            <p>Let Us Help You</p>
+            <a>Amazon and COVID-19</a>
+            <a>Your Account</a>
+            <a>Your Orders</a>
+            <a>Shipping Rates & Policies</a>
+            <a>Returns & Replacements</a>
+            <a>Manage Your Content and Devices</a>
+            <a>Amazon Assistant</a>
+            <a>Help</a>
+        </ul>
+    </div>
+
+    <div class="foot-panel3">
+        <div class="logo"></div>
+        <div class="language-selector">
+            <i class="fa-solid fa-globe"></i>
+            English
+        </div>
+    </div>
+    
+    <div class="foot-panel4">
+        <div class="pages">
+            <a>Conditions of Use</a>
+            <a>Privacy Notice</a>
+            <a>Your Ads Privacy Choices</a>
+        </div>
+        <div class="copyright">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+        </div>
+    </div>
+</footer>
 <script src="script.js"></script>
    
   
