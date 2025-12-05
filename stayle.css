@@ -108,7 +108,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.4ram;
+        font-size: 1.4rem;
         background-color: rgb(217, 165, 22);
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
@@ -252,7 +252,7 @@
     }
 
     .nav-second {
-        font: size 0.85rem;
+        font-size:  0.85rem;
         font-weight: 700;
     }
 
@@ -504,7 +504,7 @@
     .products-slider .products img,
     .uttam-slider .uttam img {
         max-width: 210px;
-        max-height: 200;
+        max-height: 200px;
     }
 
     .products-slider .products ::-webkit-scrollbar,
@@ -596,22 +596,23 @@
 
     /* --- SIDEBAR STYLES --- */
 
-/* Sidebar Overlay */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    display: none; /* By default hidden */
-}
+    /* Sidebar Overlay */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+        display: none;
+        /* By default hidden */
+    }
 
-/* Sidebar Menu */
+    /* Sidebar Menu */
 
 
-/* --- Media Query: Hide Sidebar on Laptop/Desktop (769px and up) --- */
+    /* --- Media Query: Hide Sidebar on Laptop/Desktop (769px and up) --- */
 
 
     .back-to-top {
@@ -626,7 +627,7 @@
         cursor: pointer;
 
     }
-    
+
 
     .uttam1 {
         margin-top: 2720px;
@@ -638,101 +639,168 @@
         margin-bottom: 2px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
-    .back-to-top{
+
+    .back-to-top {
         margin-bottom: 2px;
-        
+
     }
+
     /* --- Footer Styles --- */
 
-/* Back to Top (Your existing style is used, making it full width) */
+    /* Back to Top (Your existing style is used, making it full width) */
 
 
-/* 2. Links Section (foot-panel2) */
-.foot-panel2 {
-    background-color: #222f3d;
-    color: white;
-    height: 300px; /* डेस्कटॉप के लिए हाइट */
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 50px;
-}
+    /* 2. Links Section (foot-panel2) */
+    .foot-panel2 {
+        background-color: #222f3d;
+        color: white;
+        height: 300px;
+        /* डेस्कटॉप के लिए हाइट */
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 50px;
+    }
 
-.foot-panel2 ul {
-    /* Default spacing */
-    margin-right: 20px;
-}
+    .foot-panel2 ul {
+        /* Default spacing */
+        margin-right: 20px;
+    }
 
-.foot-panel2 p {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
+    .foot-panel2 p {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
 
-.foot-panel2 a {
-    display: block; /* लिंक को एक के नीचे एक दिखाने के लिए */
-    font-size: 0.85rem;
-    margin-top: 10px;
-    color: #dddddd;
-    text-decoration: none;
-    cursor: pointer;
-}
+    .foot-panel2 a {
+        display: block;
+        /* लिंक को एक के नीचे एक दिखाने के लिए */
+        font-size: 0.85rem;
+        margin-top: 10px;
+        color: #dddddd;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-.foot-panel2 a:hover {
-    text-decoration: underline;
-}
+    .foot-panel2 a:hover {
+        text-decoration: underline;
+    }
 
-/* 3. Final Footer (foot-panel3) */
-.foot-panel3 {
-    background-color: #222f3d;
-    color: white;
-    border-top: 0.5px solid #3a4553;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    /* 3. Final Footer (foot-panel3) */
+    .foot-panel3 {
+        background-color: #222f3d;
+        color: white;
+        border-top: 0.5px solid #3a4553;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.foot-panel3 .logo {
-    /* Amazon logo image should be set here */
-    background-image: url("amazon_logo.png"); /* Replace with actual logo path */
-    background-size: cover;
-    height: 50px;
-    width: 100px;
-}
+    .foot-panel3 .logo {
+        /* Amazon logo image should be set here */
+        background-image: url("amazon_logo.png");
+        /* Replace with actual logo path */
+        background-size: cover;
+        height: 50px;
+        width: 100px;
+    }
 
-.foot-panel3 .language-selector {
-    margin-left: 40px;
-    padding: 7px 10px;
-    border: 1px solid #848888;
-    border-radius: 3px;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
+    .foot-panel3 .language-selector {
+        margin-left: 40px;
+        padding: 7px 10px;
+        border: 1px solid #848888;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
 
-/* 4. Final Copyright Panel (foot-panel4) */
-.foot-panel4 {
-    background-color: #0f1111;
-    color: white;
-    height: 80px;
-    font-size: 0.75rem;
-    text-align: center;
-    padding-top: 20px;
-}
+    /* 4. Final Copyright Panel (foot-panel4) */
+    .foot-panel4 {
+        background-color: #0f1111;
+        color: white;
+        height: 80px;
+        font-size: 0.75rem;
+        text-align: center;
+        padding-top: 20px;
+    }
 
-.foot-panel4 .pages a {
-    margin: 0 10px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #dddddd;
-}
+    .foot-panel4 .pages a {
+        margin: 0 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #dddddd;
+    }
 
-.foot-panel4 .pages a:hover {
-    text-decoration: underline;
-}
+    .foot-panel4 .pages a:hover {
+        text-decoration: underline;
+    }
 
-.foot-panel4 .copyright {
-    padding-top: 5px;
-}
+    .foot-panel4 .copyright {
+        padding-top: 5px;
+    }
+
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 200;
+        height: 50px;
+        /* फिक्स्ड ऊंचाई */
+    }
+
+
+
+    .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+        padding: 0 10px;
+        display: none;
+    }
+
+    /*
+        /* ================================================= */
+    /* 3. SIDEBAR (मेन्यू क्लिक पर)                       */
+    /* ================================================= */
+    .sidebar {
+        height: 100%;
+        width: 0;
+        /* शुरू में छिपा हुआ */
+        position: fixed;
+        z-index: 300;
+        /* सबसे ऊपर */
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #131921;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: #131921;
+    }
+
 
     /* ------------------------------------------------------------------ */
     /* --- GLOBAL FIX: Fixes the massive margin issue from original CSS --- */
@@ -881,42 +949,45 @@
     /* --- Media Query for Mobile Devices (Max Width: 768px) --- */
     @media screen and (max-width: 450px) {
         .uttam1 {
-            /* યહ `!important` આપકે ઓરિજિનલ CSS મેં મોજૂદ બડી માર્જિન (2720px) કો ઓવરરાઇડ કરને કે લિયે હૈ. */
+
             margin-top: 8200px;
-            /* અબ યહ કન્ટેન્ટ કે તુરંત બાદ દિખાઈ દેગા. */
+
         }
 
         /* --- Navbar Adjustments --- */
 
         .navbar {
             flex-wrap: wrap;
+            font-size: 10px;
             height: auto;
-            padding: 10px 0;
             justify-content: space-between;
             align-items: center;
-            /* Vertically center items in the row */
+
         }
 
         /* ------------------------------ */
         /* 🔑 ROW 1: Sidebar, Logo, Sign In, Cart */
         /* ------------------------------ */
 
-        /* Sidebar Icon Placeholder (Requires HTML element with this class) */
-        .sidebar {
-            display: none;
-            align-items: center;
-            padding: 5px 10px;
-            order: -4;
-            /* First item */
-            /* Add a background or border effect for visual appeal if needed */
+
+        .menu-icon {
+            font-size: 27px;
             cursor: pointer;
+            color: white;
+            order: -4;
+            display: block;
+            
+
         }
 
         /* Logo */
         .nav-logo {
-            padding: 5px 10px;
+            margin-top: 2px;
             order: -3;
-            font-size: 0.4rem;
+            margin-left: 40px;
+            font-size: 0.1rem;
+            width: 100px !important;
+            height: 20px;
             /* Second item */
         }
 
@@ -937,19 +1008,24 @@
         .u1 {
             display: inline-block;
             order: -2;
-            font-size: 0.9rem;
+            font-size: 0.1rem;
             color: white;
-            margin-left: 60px;
+            margin-left: 30px;
         }
 
         /* Sign In/Accounts & Lists (Replaced .border3) */
 
 
         /* Cart */
-        .nav-cart {
-            order: -1;
+        .nav-cart{
+             order: -1;
             /* Fourth item (Last in Row 1) */
-            padding: 5px 10px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+
+        .nav-cart span {
+            display: none;
         }
 
         /* ------------------------------ */
@@ -957,29 +1033,58 @@
         /* ------------------------------ */
 
         .nav-search {
-            width: 95%;
             order: 0;
             /* Second Row */
-            margin: 10px auto;
+            margin: 2px auto;
             /* Centers the search bar */
             transform: none;
             /* Disable hover effect on mobile */
             box-shadow: none;
             /* Disable hover effect on mobile */
+            display: flex;
+            justify-content: space-evenly;
+            background: transparent;
+            width: 700px;
+            height: 33px;
+            border-radius: 5px;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: none;
+        }
+
+        .search-input {
+            width: 100%;
+            font-size: 1rem;
+            border: none;
+
+        }
+
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4ram;
+            background-color: rgb(217, 165, 22);
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: #0f1111;
+        }
+        .nav-return{
+            margin-top: 1px;
         }
 
         /* ------------------------------ */
         /* 🔑 ROW 3: Language Select */
         /* ------------------------------ */
 
-        .nav-language {
-            width: 100%;
-            justify-content: center;
-            /* Center the language selection */
-            order: 1;
-            /* Third Row */
-            margin-bottom: 5px;
-        }
+
 
         /* Hide redundant elements */
         .border3,
@@ -1103,7 +1208,7 @@
             flex-wrap: wrap;
             max-width: 100%;
             justify-content: space-evenly;
-            padding: 15px;
+            padding: 1px;
             font-size: 0.9rem;
             cursor: pointer;
         }
@@ -1113,11 +1218,11 @@
             flex-wrap: wrap;
             max-width: 100%;
             justify-content: space-evenly;
-            padding: 10px;
+
             gap: 6px;
             cursor: pointer;
             font-size: 0.9rem;
-            margin-bottom: 1px;
+            margin-bottom: 10px;
         }
 
         .box_img {
@@ -1138,13 +1243,13 @@
 
 
         .card-nested4 img {
-            width: 300px;
+            width: 250px;
             height: 140px;
             object-fit: cover;
         }
 
         .card-nested3 img {
-            width: 95px;
+            width: 70px;
             height: 85px;
             object-fit: cover;
         }
@@ -1184,69 +1289,72 @@
         }
 
         .foot-panel2 {
-        /* लिंक्स को एक के नीचे एक स्टैक करें */
-        flex-direction: column; 
-        height: auto; /* हाइट ऑटोमेटिकली एडजस्ट हो */
-        /* मोबाइल पर ज्यादा पैडिंग दें ताकि लिंक्स साइड से न चिपके */
-        padding: 20px 20px 10px 40px; 
-        justify-content: flex-start;
-    }
+            /* लिंक्स को एक के नीचे एक स्टैक करें */
+            flex-direction: column;
+            height: auto;
+            /* हाइट ऑटोमेटिकली एडजस्ट हो */
+            /* मोबाइल पर ज्यादा पैडिंग दें ताकि लिंक्स साइड से न चिपके */
+            padding: 20px 20px 10px 40px;
+            justify-content: flex-start;
+        }
 
-    .foot-panel2 ul {
-        margin-right: 0;
-        /* प्रत्येक कॉलम (जैसे 'Get to Know Us', 'Make Money with Us') के बीच गैप */
-        margin-bottom: 30px; 
-    }
-    
-    .foot-panel2 p {
-        /* Links के टाइटल के नीचे मार्जिन */
-        margin-bottom: 5px; 
-    }
-    
-    .foot-panel2 a {
-        /* Links के बीच की मार्जिन कम करें */
-        margin-top: 5px; 
-        font-size: 0.9rem;
-    }
+        .foot-panel2 ul {
+            margin-right: 0;
+            /* प्रत्येक कॉलम (जैसे 'Get to Know Us', 'Make Money with Us') के बीच गैप */
+            margin-bottom: 30px;
+        }
+
+        .foot-panel2 p {
+            /* Links के टाइटल के नीचे मार्जिन */
+            margin-bottom: 5px;
+        }
+
+        .foot-panel2 a {
+            /* Links के बीच की मार्जिन कम करें */
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
 
 
-    /* 2. Logo and Language Section (foot-panel3) - Vertical Alignment */
-    .foot-panel3 {
-        /* लोगो और भाषा चयन को एक के नीचे एक करें */
-        flex-direction: column;
-        height: auto;
-        padding: 15px 0;
-    }
+        /* 2. Logo and Language Section (foot-panel3) - Vertical Alignment */
+        .foot-panel3 {
+            /* लोगो और भाषा चयन को एक के नीचे एक करें */
+            flex-direction: column;
+            height: auto;
+            padding: 15px 0;
+        }
 
-    .foot-panel3 .logo {
-        /* मोबाइल पर लोगो की साइज़ थोड़ी कम कर सकते हैं */
-        height: 40px; 
-        width: 80px;
-    }
+        .foot-panel3 .logo {
+            /* मोबाइल पर लोगो की साइज़ थोड़ी कम कर सकते हैं */
+            height: 40px;
+            width: 80px;
+        }
 
-    .foot-panel3 .language-selector {
-        margin-left: 0;
-        margin-top: 15px; /* लोगो और भाषा चयन के बीच गैप */
-        font-size: 0.9rem;
-    }
+        .foot-panel3 .language-selector {
+            margin-left: 0;
+            margin-top: 15px;
+            /* लोगो और भाषा चयन के बीच गैप */
+            font-size: 0.9rem;
+        }
 
-    /* 3. Final Copyright Panel (foot-panel4) */
-    .foot-panel4 {
-        height: auto; /* हाइट को एडजस्ट करें */
-        padding: 15px 10px;
+        /* 3. Final Copyright Panel (foot-panel4) */
+        .foot-panel4 {
+            height: auto;
+            /* हाइट को एडजस्ट करें */
+            padding: 15px 10px;
+        }
+
+        .foot-panel4 .pages {
+            /* Links को एक के नीचे एक स्टैक करने के लिए display: block; उपयोग करें */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .foot-panel4 .pages a {
+            margin: 5px 0;
+            /* हर लिंक के ऊपर/नीचे थोड़ी जगह */
+            font-size: 0.8rem;
+        }
     }
-    
-    .foot-panel4 .pages {
-        /* Links को एक के नीचे एक स्टैक करने के लिए display: block; उपयोग करें */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    
-    .foot-panel4 .pages a {
-        margin: 5px 0; /* हर लिंक के ऊपर/नीचे थोड़ी जगह */
-        font-size: 0.8rem;
-    }
-}
-    
