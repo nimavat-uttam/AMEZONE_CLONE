@@ -740,19 +740,7 @@
         padding-top: 5px;
     }
 
-    .top-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 200;
-        height: 50px;
-        /* फिक्स्ड ऊंचाई */
-    }
-
+   
 
 
     .menu-icon {
@@ -762,192 +750,53 @@
         padding: 0 10px;
         display: none;
     }
-
-    /*
-        /* ================================================= */
-    /* 3. SIDEBAR (मेन्यू क्लिक पर)                       */
-    /* ================================================= */
-    .sidebar {
-        height: 100%;
-        width: 0;
-        /* शुरू में छिपा हुआ */
-        position: fixed;
-        z-index: 300;
-        /* सबसे ऊपर */
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        overflow-x: hidden;
-        transition: 0.3s;
-        padding-top: 60px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 16px;
-        color: #131921;
-        display: block;
-        border-bottom: 1px solid #eee;
-    }
-
-    .sidebar .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 36px;
-        margin-left: 50px;
-        color: #131921;
-    }
-
-
-    /* ------------------------------------------------------------------ */
-    /* --- GLOBAL FIX: Fixes the massive margin issue from original CSS --- */
-    /* --- યહ લાઇન પૂરે લેઆઉટ કે લિયે હૈ, તાકિ 'Back to Top' બટન હમેશાં સહી જગહ યાની સબસે નીચે દિખે. */
-    /* ------------------------------------------------------------------ */
-
-
-    /* --- Media Query for Tablets and Smaller Laptops (Max Width: 1024px) --- */
-    @media screen and (min-width: 450px) and (max-width: 1024px) {
-
-        /* Search Bar Adjustment */
-        .uttam1 {
-            /* યહ `!important` આપકે ઓરિજિનલ CSS મેં મોજૂદ બડી માર્જિન (2720px) કો ઓવરરાઇડ કરને કે લિયે હૈ. */
-            margin-top: 3000px;
-            /* અબ યહ કન્ટેન્ટ કે તુરંત બાદ દિખાઈ દેગા. */
+   
+            .sidebar {
+            height: 100%;
+            width: 0; /* शुरू में छिपा हुआ */
+            position: fixed;
+            z-index: 300; /* सबसे ऊपर */
+            top: 0;
+             order: -4;
+            left: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
         }
 
-        /* --- Navbar Adjustments --- */
-
-        .navbar {
-            flex-wrap: wrap;
-            height: auto;
-            padding: 10px 0;
-            justify-content: space-between;
-            align-items: center;
-            /* Vertically center items in the row */
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #131921;
+            display: block;
+            border-bottom: 1px solid #eee;
         }
 
-        /* ------------------------------ */
-        /* 🔑 ROW 1: Sidebar, Logo, Sign In, Cart */
-        /* ------------------------------ */
-
-        /* Sidebar Icon Placeholder (Requires HTML element with this class) */
-        .nav-sidebar-icon {
-            display: flex;
-            align-items: center;
-            padding: 5px 10px;
-            order: -4;
-            /* First item */
-            /* Add a background or border effect for visual appeal if needed */
-            cursor: pointer;
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: #131921;
         }
-
-        /* Logo */
-        .nav-logo {
-            padding: 5px 10px;
-            order: -3;
-            /* Second item */
-        }
-
-        /* Address Box (Hidden on Mobile) */
-        .nav-address {
+   
+        .bottom-nav{
             display: none;
-        }
-
-        /* Sign In/Accounts & Lists (Replaced .border3) */
-        .nav-signin {
-            display: none;
-        }
-
-
-
-        /* Cart */
-        .nav-cart {
-            order: -1;
-            /* Fourth item (Last in Row 1) */
-            padding: 5px 10px;
-        }
-
-        /* ------------------------------ */
-        /* 🔑 ROW 2: Search Bar */
-        /* ------------------------------ */
-
-        .nav-search {
-            width: 95%;
-            order: 0;
-            /* Second Row */
-            margin: 10px auto;
-            /* Centers the search bar */
-            transform: none;
-            /* Disable hover effect on mobile */
-            box-shadow: none;
-            /* Disable hover effect on mobile */
-        }
-
-        /* ------------------------------ */
-        /* 🔑 ROW 3: Language Select */
-        /* ------------------------------ */
-
-        .nav-language {
-            width: 100%;
-            justify-content: center;
-            /* Center the language selection */
-            order: 1;
-            /* Third Row */
-            margin-bottom: 5px;
-        }
-
-        /* Hide redundant elements */
-        .border3,
-        .border1 {
-            display: none;
-        }
-
-        /* --- Panel Adjustments (Secondary Nav) --- */
-        .panel {
-            overflow-x: auto;
-            justify-content: flex-start;
-            height: auto;
-        }
-
-        .panel-ops {
-            width: 100%;
-            display: flex;
-            flex-wrap: nowrap;
-            padding: 0 10px;
-            white-space: nowrap;
-        }
-
-        .panel-ops p {
-            margin: 0 8px;
-            padding: 10px 0;
-        }
-
-        .panel-deals {
-            display: none;
-        }
-
-
-        /* --- Hero Section Adjustments --- */
-        .hero-section {
-            height: 250px;
-            margin: 10px 5px;
-            background-position: center;
 
         }
-
-
-
-    }
+   
 
 
 
 
+        
     /* ----------mobile---------*/
     /* --- Media Query for Mobile Devices (Max Width: 768px) --- */
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 500px) {
         .uttam1 {
 
             margin-top: 8200px;
@@ -969,25 +818,75 @@
         /* 🔑 ROW 1: Sidebar, Logo, Sign In, Cart */
         /* ------------------------------ */
 
+           
 
         .menu-icon {
             font-size: 27px;
             cursor: pointer;
             color: white;
             order: -4;
-            display: block;
-            
-
+            padding: 10px;
+            display:block;
+             justify-content: space-between;
         }
+         .sidebar {
+            height: 100%;
+            width: 0; /* शुरू में छिपा हुआ */
+            position: fixed;
+            z-index: 300; /* सबसे ऊपर */
+                order: -4;
+            left: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        }
+              
+        .main-content {
+            padding: 10px;
+        }
+        
+        /* साइन-इन और रिटर्न कार्ड स्टाइल (पिछले उदाहरण से) */
+        .main-content h2 { color: #C7511F; margin-bottom: 10px; }
+        .main-content button { 
+            width: 100%; padding: 10px; margin-top: 10px; 
+            border-radius: 4px; font-weight: bold; cursor: pointer;
+        }
+
+         .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            padding: 8px 0;
+           
+        }
+        
+        .nav-item {
+            text-align: center;
+            font-size: 10px;
+            color: #000;
+            padding: 5px;
+        }
+        .nav-item i {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
 
         /* Logo */
         .nav-logo {
             margin-top: 2px;
             order: -3;
-            margin-left: 40px;
+            margin-left: 5px;
             font-size: 0.1rem;
             width: 100px !important;
-            height: 20px;
+            height: 10px;
             /* Second item */
         }
 
@@ -1033,7 +932,7 @@
         /* ------------------------------ */
 
         .nav-search {
-            order: 0;
+            
             /* Second Row */
             margin: 2px auto;
             /* Centers the search bar */
@@ -1042,6 +941,11 @@
             box-shadow: none;
             /* Disable hover effect on mobile */
             display: flex;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding-left: 5px;
+
             justify-content: space-evenly;
             background: transparent;
             width: 700px;
@@ -1358,3 +1262,143 @@
             font-size: 0.8rem;
         }
     }
+
+
+
+
+     /* --- Media Query for Tablets and Smaller Laptops (Max Width: 1024px) --- */
+    @media screen and (min-width: 450px) and (max-width: 1024px) {
+
+        /* Search Bar Adjustment */
+        .uttam1 {
+            /* યહ `!important` આપકે ઓરિજિનલ CSS મેં મોજૂદ બડી માર્જિન (2720px) કો ઓવરરાઇડ કરને કે લિયે હૈ. */
+            margin-top: 3000px;
+            /* અબ યહ કન્ટેન્ટ કે તુરંત બાદ દિખાઈ દેગા. */
+        }
+
+        /* --- Navbar Adjustments --- */
+
+        .navbar {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items in the row */
+        }
+
+       
+          .sidebar {
+            height: 100%;
+            width: 0; /* शुरू में छिपा हुआ */
+            position: fixed;
+            z-index: 300; /* सबसे ऊपर */
+                order: -4;
+            left: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        }
+
+       
+
+        /* Logo */
+        .nav-logo {
+            padding: 5px 10px;
+            order: -3;
+            /* Second item */
+        }
+
+        /* Address Box (Hidden on Mobile) */
+        .nav-address {
+            display: none;
+        }
+
+        /* Sign In/Accounts & Lists (Replaced .border3) */
+        .nav-signin {
+            display: none;
+        }
+
+
+
+        /* Cart */
+        .nav-cart {
+            order: -1;
+            /* Fourth item (Last in Row 1) */
+            padding: 5px 10px;
+        }
+
+        /* ------------------------------ */
+        /* 🔑 ROW 2: Search Bar */
+        /* ------------------------------ */
+
+        .nav-search {
+            width: 95%;
+            order: 0;
+            /* Second Row */
+            margin: 10px auto;
+            /* Centers the search bar */
+            transform: none;
+            /* Disable hover effect on mobile */
+            box-shadow: none;
+            /* Disable hover effect on mobile */
+        }
+
+        /* ------------------------------ */
+        /* 🔑 ROW 3: Language Select */
+        /* ------------------------------ */
+
+        .nav-language {
+            width: 100%;
+            justify-content: center;
+            /* Center the language selection */
+            order: 1;
+            /* Third Row */
+            margin-bottom: 5px;
+        }
+
+        /* Hide redundant elements */
+        .border3,
+        .border1 {
+            display: none;
+        }
+
+        /* --- Panel Adjustments (Secondary Nav) --- */
+        .panel {
+            overflow-x: auto;
+            justify-content: flex-start;
+            height: auto;
+        }
+
+        .panel-ops {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+
+        .panel-ops p {
+            margin: 0 8px;
+            padding: 10px 0;
+        }
+
+        .panel-deals {
+            display: none;
+        }
+
+
+        /* --- Hero Section Adjustments --- */
+        .hero-section {
+            height: 250px;
+            margin: 10px 5px;
+            background-position: center;
+
+        }
+
+
+
+    }
+
