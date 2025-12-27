@@ -4,14 +4,15 @@
 
 
 
-    const scrollContainers = document.querySelectorAll(".products, .uttam");
-      for (const item of scrollContainers){
-     item.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        container.scrollLeft += evt.deltaY;
-      });
-    };
+   const scrollContainers = document.querySelectorAll(".products, .uttam");
 
+for (const item of scrollContainers) {
+    item.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        // 'container' की जगह 'item' का उपयोग करें
+        item.scrollLeft += evt.deltaY;
+    });
+};
 
  // Cart functionality
   // ===== Cart Elements =====
