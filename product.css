@@ -399,18 +399,18 @@ a {
 
     /* 1. Main Layout: Stacking Columns Vertically */
     .product-display {
-        flex-direction: column; /* मुख्य कंटेनर को ऊपर-नीचे स्टैक करें */
+        flex-direction: column; 
         padding: 10px;
-        gap: 20px; /* विभिन्न सेक्शन के बीच जगह बढ़ाएँ */
+        gap: 20px; 
     }
 
     /* Purchase Box (.product-d-purchase) - Goes to the TOP on mobile */
     .product-d-purchase {
-        width: 100%; /* पूरी चौड़ाई लें */
+        width: 100%;
         max-width: 100%;
         margin: 0;
-        order: 0; /* यह इसे विवरण (Details) और इमेज से भी ऊपर लाएगा */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* मोबाइल पर बॉक्स को ज़्यादा उभार दें */
+        order: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
     /* Details Section (.product-d-details) - Full Width */
@@ -426,20 +426,20 @@ a {
     /* 2. Image Section Adjustments (Thumbnails + Main Image) */
     .product-d-image {
         width: 100%; 
-        justify-content: center; /* इमेज को केंद्र में लाएँ */
+        justify-content: center; 
         gap: 10px; 
     }
     
     .product-icons {
-        width: 15%; /* Thumbnails के लिए कम जगह */
+        width: 15%; 
         gap: 5px;
     }
     
     .product-main-image {
-        width: 80%; /* मुख्य इमेज के लिए ज़्यादा जगह */
+        width: 80%; 
         margin: 0;
         padding: 5px;
-        border: none; /* मोबाइल पर मुख्य इमेज से बॉर्डर हटा दें */
+        border: none; 
     }
 
     /* 3. Text and Components Refinement */

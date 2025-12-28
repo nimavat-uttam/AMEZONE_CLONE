@@ -613,10 +613,7 @@
         /* By default hidden */
     }
 
-    /* Sidebar Menu */
-
-
-    /* --- Media Query: Hide Sidebar on Laptop/Desktop (769px and up) --- */
+   
 
 
     .back-to-top {
@@ -649,17 +646,13 @@
 
     }
 
-    /* --- Footer Styles --- */
-
-    /* Back to Top (Your existing style is used, making it full width) */
-
 
     /* 2. Links Section (foot-panel2) */
     .foot-panel2 {
         background-color: #222f3d;
         color: white;
         height: 300px;
-        /* डेस्कटॉप के लिए हाइट */
+       
         display: flex;
         justify-content: space-evenly;
         padding-top: 50px;
@@ -678,7 +671,7 @@
 
     .foot-panel2 a {
         display: block;
-        /* लिंक को एक के नीचे एक दिखाने के लिए */
+       
         font-size: 0.85rem;
         margin-top: 10px;
         color: #dddddd;
@@ -757,9 +750,9 @@
    
             .sidebar {
             height: 100%;
-            width: 0; /* शुरू में छिपा हुआ */
+            width: 0; 
             position: fixed;
-            z-index: 300; /* सबसे ऊपर */
+            z-index: 300; 
             top: 0;
              order: -4;
             left: 0;
@@ -808,11 +801,12 @@
         }
 
         /* --- Navbar Adjustments --- */
-
+            
         .navbar {
             flex-wrap: wrap;
             font-size: 10px;
             height: auto;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
               box-shadow:  none;
@@ -837,9 +831,9 @@
         }
          .sidebar {
             height: 100%;
-            width: 0; /* शुरू में छिपा हुआ */
+            width: 0; 
             position: fixed;
-            z-index: 300; /* सबसे ऊपर */
+            z-index: 300; 
                 order: -4;
             left: 0;
             background-color: #fff;
@@ -853,7 +847,7 @@
             padding: 10px;
         }
         
-        /* साइन-इन और रिटर्न कार्ड स्टाइल (पिछले उदाहरण से) */
+      
         .main-content h2 { color: #C7511F; margin-bottom: 10px; }
         .main-content button { 
             width: 100%; padding: 10px; margin-top: 10px; 
@@ -866,9 +860,11 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
+            background-color: transparent;
+            border-top: 1px solid black;
         }
+    
+
         
         .nav-item {
             text-align: center;
@@ -876,12 +872,13 @@
             color: #000;
             padding: 5px;
         }
+     
         .nav-item i {
             font-size: 20px;
             display: block;
             margin-bottom: 2px;
         }
-
+            
 
         /* Logo */
         .nav-logo {
@@ -924,7 +921,7 @@
         /* Cart */
         .nav-cart{
              order: -1;
-            /* Fourth item (Last in Row 1) */
+            
             margin-right: 8px;
             margin-bottom: 5px;
             border: none;
@@ -951,7 +948,7 @@
             font-size: 20px;
             font-weight: bold;
             color: white;
-            padding-left: 5px;
+            margin-right: 6px;
             justify-content: space-evenly;
             background: transparent;
             width: 700px;
@@ -1050,18 +1047,16 @@
         }
 
 
-        /* --- Shop Section Adjustments (The Product Boxes) --- */
-        /* BOX STACKING: Mobile par ek ke niche ek dikhega */
         .shop-section {
             flex-direction: column;
-            /* Stacks vertically */
+           
             align-items: center;
             padding: 0 5px;
         }
 
         .box {
             width: 95%;
-            /* Full width for mobile */
+           
             margin-left: 0;
             margin-right: 0;
             margin-bottom: 20px;
@@ -1069,7 +1064,7 @@
 
         /* Box Content: Layout Preservation */
         .box-content {
-            /* ઇન્ટરનલ માર્જિન કમ કી ગઈ હૈ */
+            
             margin-left: 0.5rem;
             margin-right: 0.5rem;
 
@@ -1083,11 +1078,11 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        /* Anchor tags (See More link) */
+        
         .box-content a {
             font-size: 1rem;
             margin-top: 10px;
-            /* Link ke upar thodi jagah */
+           
             display: block;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -1103,13 +1098,11 @@
             background-position: center;
             margin-top: 1rem;
             margin-bottom: 2rem;
-            /* SPACING INCREASED to push text down */
+           
         }
 
 
-        /* --- MULTI-IMAGE BOX (4 Images) FIX --- */
-
-        /* Nested Box Containers (Row 1 and Row 2 for 2x2 grid) */
+       
         .box2-image1,
         .box2-image2,
         .box3-image1,
@@ -1117,7 +1110,7 @@
             max-width: 100%;
             justify-content: space-between;
             padding: 2px;
-            /* Yahaan is liye margin nahi de rahe hain kyunki hum inner cards ko target karenge */
+           
         }
 
         .box4-image1 {
@@ -1172,12 +1165,12 @@
             object-fit: cover;
         }
 
-        /* Target the individual card (which holds the img and its label) to control 2x2 spacing */
+        
         .card-nested,
         .card-nested1 {
             /* 48% width ensures 2 items per row (2x2 grid) */
             width: 48%;
-            /* Vertical spacing between the first row and the second row of the 2x2 grid */
+           
             margin-bottom: 15px;
         }
 
@@ -1187,9 +1180,9 @@
         .card-nested1 img {
             object-fit: contain;
             width: 100%;
-            /* Now takes full 48% width of its parent (.card-nested) */
+           
             height: 120px;
-            /* Increased height for better visibility */
+            
         }
 
         /* --- Sliders (Row 3, 5, 7) Adjustments --- */
@@ -1207,28 +1200,27 @@
         }
 
         .foot-panel2 {
-            /* लिंक्स को एक के नीचे एक स्टैक करें */
+           
             flex-direction: column;
             height: auto;
-            /* हाइट ऑटोमेटिकली एडजस्ट हो */
-            /* मोबाइल पर ज्यादा पैडिंग दें ताकि लिंक्स साइड से न चिपके */
+           
             padding: 20px 20px 10px 40px;
             justify-content: flex-start;
         }
 
         .foot-panel2 ul {
             margin-right: 0;
-            /* प्रत्येक कॉलम (जैसे 'Get to Know Us', 'Make Money with Us') के बीच गैप */
+           
             margin-bottom: 30px;
         }
 
         .foot-panel2 p {
-            /* Links के टाइटल के नीचे मार्जिन */
+          
             margin-bottom: 5px;
         }
 
         .foot-panel2 a {
-            /* Links के बीच की मार्जिन कम करें */
+           
             margin-top: 5px;
             font-size: 0.9rem;
         }
@@ -1236,14 +1228,14 @@
 
         /* 2. Logo and Language Section (foot-panel3) - Vertical Alignment */
         .foot-panel3 {
-            /* लोगो और भाषा चयन को एक के नीचे एक करें */
+
             flex-direction: column;
             height: auto;
             padding: 15px 0;
         }
 
         .foot-panel3 .logo {
-            /* मोबाइल पर लोगो की साइज़ थोड़ी कम कर सकते हैं */
+           
             height: 40px;
             width: 80px;
         }
@@ -1251,19 +1243,19 @@
         .foot-panel3 .language-selector {
             margin-left: 0;
             margin-top: 15px;
-            /* लोगो और भाषा चयन के बीच गैप */
+           
             font-size: 0.9rem;
         }
 
         /* 3. Final Copyright Panel (foot-panel4) */
         .foot-panel4 {
             height: auto;
-            /* हाइट को एडजस्ट करें */
+           
             padding: 15px 10px;
         }
 
         .foot-panel4 .pages {
-            /* Links को एक के नीचे एक स्टैक करने के लिए display: block; उपयोग करें */
+            
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1272,7 +1264,7 @@
 
         .foot-panel4 .pages a {
             margin: 5px 0;
-            /* हर लिंक के ऊपर/नीचे थोड़ी जगह */
+           
             font-size: 0.8rem;
         }
     }
