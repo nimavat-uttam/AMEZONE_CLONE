@@ -4,18 +4,18 @@
 
 
 
-   const scrollContainers = document.querySelectorAll(".products, .uttam");
+const scrollContainers = document.querySelectorAll(".products, .uttam");
 
 for (const item of scrollContainers) {
-    item.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        // 'container' की जगह 'item' का उपयोग करें
-        item.scrollLeft += evt.deltaY;
-    });
+  item.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    // 'container' की जगह 'item' का उपयोग करें
+    item.scrollLeft += evt.deltaY;
+  });
 };
 
- // Cart functionality
-  // ===== Cart Elements =====
+// Cart functionality
+// ===== Cart Elements =====
 const cartCountElement = document.querySelector('.cart-count');
 const addToCartButtons = document.querySelectorAll('.btn');
 
@@ -62,43 +62,67 @@ window.addEventListener('storage', (event) => {
 });
 
 
- /* Sidebar control with JavaScript */
-        function openNav() {
-            // मोबाइल पर 75% चौड़ाई
-            document.getElementById("mySidebar").style.width = "75%"; 
-        }
+/* Sidebar control with JavaScript */
+function openNav() {
+  // मोबाइल पर 75% चौड़ाई
+  document.getElementById("mySidebar").style.width = "75%";
+}
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
 
 
 /* see more toggle*/
 function toggleItems(elem) {
-    const moreItems = document.querySelector('.more-items');
-    if (moreItems.style.display === 'none' || moreItems.style.display === '') {
-        moreItems.style.display = 'grid'; // grid layout maintain
-        elem.textContent = 'See Less';
-    } else {
-        moreItems.style.display = 'none';
-        elem.textContent = 'See More';
-    }
+  const moreItems = document.querySelector('.more-items');
+  if (moreItems.style.display === 'none' || moreItems.style.display === '') {
+    moreItems.style.display = 'grid'; // grid layout maintain
+    elem.textContent = 'See Less';
+  } else {
+    moreItems.style.display = 'none';
+    elem.textContent = 'See More';
+  }
 }
 
 const checkoutBtn = document.getElementById('checkout');
-  const cartCountElement1 = document.querySelector('.cart-count');
+const cartCountElement1 = document.querySelector('.cart-count');
 
-  checkoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('cartCount'); // 👈 Cart reset karo
-    cartCountElement1.textContent = 0; // Display pan 0 karo
-    alert("Thank you! Your cart has been cleared.");
-  });
-   function openNav() {
-            // मोबाइल पर 75% चौड़ाई
-            document.getElementById("mySidebar").style.width = "75%"; 
-        }
+checkoutBtn.addEventListener('click', () => {
+  localStorage.removeItem('cartCount'); // 👈 Cart reset karo
+  cartCountElement1.textContent = 0; // Display pan 0 karo
+  alert("Thank you! Your cart has been cleared.");
+});
+function openNav() {
+  // मोबाइल पर 75% चौड़ाई
+  document.getElementById("mySidebar").style.width = "75%";
+}
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+
+//search bar
+
+// 1. Search bar aur saare boxes ko select karein
+const searchInput = document.querySelector(".search-input"); 
+const allBoxes = document.querySelectorAll(".box");
+
+// 2. Event listener lagayein
+if(searchInput) {
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase(); // Jo user type kar raha hai
+
+        allBoxes.forEach(box => {
+            // Box ke andar ka saara text check karein
+            const text = box.innerText.toLowerCase(); 
+            
+            if (text.includes(query)) {
+                box.style.display = "block"; // Match hone par dikhao
+            } else {
+                box.style.display = "none";  // Match na hone par chhupa do
+            }
+        });
+    });
+}
 
