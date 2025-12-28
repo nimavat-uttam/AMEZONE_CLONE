@@ -1,6 +1,7 @@
     body {
         background-color: #EAEDED;
         overflow-x: hidden; 
+        
     width: 100vw;
     
 
@@ -926,6 +927,7 @@
             /* Fourth item (Last in Row 1) */
             margin-right: 8px;
             margin-bottom: 5px;
+            border: none;
         }
 
         .nav-cart span {
@@ -999,8 +1001,13 @@
 
         /* Hide redundant elements */
         .border3,
-        .border1 {
+        .border1{
             display: none;
+        }
+        .border4, .border4:hover{
+            border: none;
+            border-radius: none;
+            
         }
 
         /* --- Panel Adjustments (Secondary Nav) --- */
