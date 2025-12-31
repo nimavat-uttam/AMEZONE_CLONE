@@ -1,9 +1,9 @@
     body {
         background-color: #EAEDED;
-        overflow-x: hidden; 
-        
-    width: 100vw;
-    
+        overflow-x: hidden;
+
+        width: 100vw;
+
 
     }
 
@@ -256,10 +256,10 @@
     }
 
     .nav-second {
-        font-size:  0.85rem;
+        font-size: 0.85rem;
         font-weight: 700;
     }
-   
+
     /* box-5*/
 
     .nav-cart i {
@@ -329,7 +329,7 @@
 
 
     }
- 
+
     .hero-msg {
         background: rgba(255, 255, 255, 0.7);
         color: black;
@@ -613,7 +613,7 @@
         /* By default hidden */
     }
 
-   
+
 
 
     .back-to-top {
@@ -652,7 +652,7 @@
         background-color: #222f3d;
         color: white;
         height: 300px;
-       
+
         display: flex;
         justify-content: space-evenly;
         padding-top: 50px;
@@ -671,7 +671,7 @@
 
     .foot-panel2 a {
         display: block;
-       
+
         font-size: 0.85rem;
         margin-top: 10px;
         color: #dddddd;
@@ -737,7 +737,7 @@
         padding-top: 5px;
     }
 
-   
+
 
 
     .menu-icon {
@@ -747,66 +747,68 @@
         padding: 0 10px;
         display: none;
     }
-   
-            .sidebar {
-            height: 100%;
-            width: 0; 
-            position: fixed;
-            z-index: 300; 
-            top: 0;
-             order: -4;
-            left: 0;
-            background-color: #fff;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 60px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-        }
 
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 16px;
-            color: #131921;
-            display: block;
-            border-bottom: 1px solid #eee;
-        }
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 300;
+        top: 0;
+        order: -4;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
 
-        .sidebar .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 36px;
-            margin-left: 50px;
-            color: #131921;
-        }
-   
-        .bottom-nav{
-            display: none;
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #131921;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
 
-        }
-   
-.box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .sidebar .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: #131921;
+    }
 
-.box:hover {
-    transform: translateY(-5px); /* Box halka upar uthega */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    cursor: pointer;
-}
+    .bottom-nav {
+        display: none;
 
-.box_img {
-    transition: transform 0.4s ease;
-}
+    }
 
-.box:hover .box_img {
-    transform: scale(1.08); /* Image zoom hogi */
-}
+    .box {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+        transform: translateY(-5px);
+        /* Box halka upar uthega */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .box_img {
+        transition: transform 0.4s ease;
+    }
+
+    .box:hover .box_img {
+        transform: scale(1.08);
+        /* Image zoom hogi */
+    }
 
 
 
-        
+
     /* ----------mobile---------*/
     /* --- Media Query for Mobile Devices (Max Width: 768px) --- */
     @media screen and (max-width: 550px) {
@@ -817,7 +819,7 @@
         }
 
         /* --- Navbar Adjustments --- */
-            
+
         .navbar {
             flex-wrap: wrap;
             font-size: 10px;
@@ -825,16 +827,42 @@
             width: 100%;
             justify-content: space-between;
             align-items: center;
-              box-shadow:  none;
-            
+            box-shadow: none;
+            background-color: #000;
+
 
         }
+
+        /*
+            top sideabrt
+        */
 
         /* ------------------------------ */
         /* 🔑 ROW 1: Sidebar, Logo, Sign In, Cart */
         /* ------------------------------ */
+        .nav-logo img {
+            width: 80px !important;
+          
+            height: auto;
+        }
 
-           
+        .menu-icon {
+            font-size: 25px !important;
+            
+            margin-left: 20px !important;
+
+        }
+
+        .nav-cart i {
+            font-size: 20px !important;
+            
+        }
+
+        .cart-count {
+            font-size: 10px !important;
+         
+            top: -5px !important;
+        }
 
         .menu-icon {
             font-size: 27px;
@@ -842,35 +870,44 @@
             color: white;
             order: -4;
             padding: 10px;
-            display:block;
-             justify-content: space-between;
+            display: block;
+            justify-content: space-between;
         }
-         .sidebar {
+
+        .sidebar {
             height: 100%;
-            width: 0; 
+            width: 0;
             position: fixed;
-            z-index: 300; 
-                order: -4;
+            z-index: 300;
+            order: -4;
             left: 0;
             background-color: #fff;
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         }
-              
+
         .main-content {
             padding: 10px;
         }
-        
-      
-        .main-content h2 { color: #C7511F; margin-bottom: 10px; }
-        .main-content button { 
-            width: 100%; padding: 10px; margin-top: 10px; 
-            border-radius: 4px; font-weight: bold; cursor: pointer;
+
+
+        .main-content h2 {
+            color: #C7511F;
+            margin-bottom: 10px;
         }
 
-         .bottom-nav {
+        .main-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .bottom-nav {
             display: flex;
             justify-content: space-around;
             position: fixed;
@@ -879,22 +916,22 @@
             background-color: white;
             border-top: 1px solid black;
         }
-    
 
-        
+
+
         .nav-item {
             text-align: center;
             font-size: 10px;
             color: #000;
             padding: 5px;
         }
-     
+
         .nav-item i {
             font-size: 20px;
             display: block;
             margin-bottom: 2px;
         }
-            
+
 
         /* Logo */
         .nav-logo {
@@ -905,20 +942,19 @@
             width: 100px;
             height: 10px;
             border: none;
-            
+
             /* Second item */
         }
 
-        /* Address Box (Hidden on Mobile) */
         .nav-address {
             display: none;
         }
 
-        /* Sign In/Accounts & Lists (Replaced .border3) */
+        
         .nav-signin {
             display: none;
         }
-        
+
         .me {
             display: none;
         }
@@ -931,13 +967,10 @@
             margin-left: 30px;
         }
 
-        /* Sign In/Accounts & Lists (Replaced .border3) */
+       
+        .nav-cart {
+            order: -1;
 
-
-        /* Cart */
-        .nav-cart{
-             order: -1;
-            
             margin-right: 8px;
             margin-bottom: 5px;
             border: none;
@@ -952,7 +985,7 @@
         /* ------------------------------ */
 
         .nav-search {
-            
+
             /* Second Row */
             margin: 2px auto;
             /* Centers the search bar */
@@ -969,71 +1002,75 @@
             background: transparent;
             width: 700px;
             height: 33px;
-            
+
         }
 
         .search-select {
-            box-shadow:  none;
+            box-shadow: none;
             background-color: #f3f3f3;
             width: 50px;
             text-align: center;
-            
+
             border: none;
         }
 
-     /* --- Mobile View Box Fix --- */
-@media screen and (max-width: 450px) {
-    .shop-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-        /* Bottom nav ke liye thoda extra space niche chhodein */
-        margin-bottom: 70px; 
-    }
+        /* --- Mobile View Box Fix --- */
+        @media screen and (max-width: 450px) {
+            .shop-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+                
+                margin-bottom: 70px;
+            }
 
-    .box {
-        width: 92%; /* Screen se thoda side gap rakhega */
-        height: auto;
-        background-color: white;
-        padding: 15px 0;
-        margin-bottom: 15px;
-        /* Isse box bottom nav ke niche nahi ghusega */
-        position: relative; 
-        z-index: 1;
-    }
+            .box {
+                width: 92%;
+               
+                height: auto;
+                background-color: white;
+                padding: 15px 0;
+                margin-bottom: 15px;
+                /* Isse box bottom nav ke niche nahi ghusega */
+                position: relative;
+                z-index: 1;
+            }
 
-    .box-content {
-        margin: 0 15px;
-    }
+            .box-content {
+                margin: 0 15px;
+            }
 
-    .box_img {
-        height: 200px; /* Mobile ke liye fixed height */
-        width: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+            .box_img {
+                height: 200px;
+                
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
 
-    /* Agar aapka koi fixed bottom nav hai, toh use ye dein */
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        z-index: 1000; /* Isse nav hamesha box ke upar rahega */
-    }
-}
+            
+            .bottom-nav {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                z-index: 1000;
+                
+            }
+        }
+
         .search-input {
             width: 100%;
             font-size: 1rem;
             border: none;
-            box-shadow:  none;
+            box-shadow: none;
 
         }
 
-        
+
         .search-icon {
             width: 45px;
             display: flex;
@@ -1041,14 +1078,16 @@
             align-items: center;
             font-size: 1.4ram;
             background-color: rgb(217, 165, 22);
-              box-shadow:  none;
+            box-shadow: none;
             color: #0f1111;
         }
-        .nav-return{
+
+        .nav-return {
             margin-top: 1px;
         }
-        .nav-search:hover{
-              box-shadow:  none;
+
+        .nav-search:hover {
+            box-shadow: none;
         }
 
         /* ------------------------------ */
@@ -1057,15 +1096,17 @@
 
 
 
-        /* Hide redundant elements */
+        
         .border3,
-        .border1{
+        .border1 {
             display: none;
         }
-        .border4, .border4:hover{
+
+        .border4,
+        .border4:hover {
             border: none;
             border-radius: none;
-            
+
         }
 
         /* --- Panel Adjustments (Secondary Nav) --- */
@@ -1110,14 +1151,14 @@
 
         .shop-section {
             flex-direction: column;
-           
+
             align-items: center;
             padding: 0 5px;
         }
 
         .box {
             width: 95%;
-           
+
             margin-left: 0;
             margin-right: 0;
             margin-bottom: 20px;
@@ -1125,7 +1166,7 @@
 
         /* Box Content: Layout Preservation */
         .box-content {
-            
+
             margin-left: 0.5rem;
             margin-right: 0.5rem;
 
@@ -1139,11 +1180,11 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        
+
         .box-content a {
             font-size: 1rem;
             margin-top: 10px;
-           
+
             display: block;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -1159,11 +1200,11 @@
             background-position: center;
             margin-top: 1rem;
             margin-bottom: 2rem;
-           
+
         }
 
 
-       
+
         .box2-image1,
         .box2-image2,
         .box3-image1,
@@ -1171,7 +1212,7 @@
             max-width: 100%;
             justify-content: space-between;
             padding: 2px;
-           
+
         }
 
         .box4-image1 {
@@ -1226,12 +1267,12 @@
             object-fit: cover;
         }
 
-        
+
         .card-nested,
         .card-nested1 {
             /* 48% width ensures 2 items per row (2x2 grid) */
             width: 48%;
-           
+
             margin-bottom: 15px;
         }
 
@@ -1241,20 +1282,24 @@
         .card-nested1 img {
             object-fit: contain;
             width: 100%;
-           
-            height: 120px;
-            
-        }
-        .products-slider {
-    display: flex;
-    overflow-x: auto;
-    font-size: 0.4rem;
-    scroll-snap-type: x mandatory; /* Snap enable karega */
-}
 
-.product-card {
-    scroll-snap-align: center; /* Card beech mein aake rukega */
-}
+            height: 120px;
+
+        }
+
+        .products-slider {
+            display: flex;
+            overflow-x: auto;
+            font-size: 0.4rem;
+            scroll-snap-type: x mandatory;
+            /* Snap enable karega */
+        }
+
+        .product-card {
+            scroll-snap-align: center;
+            /* Card beech mein aake rukega */
+        }
+
         /* --- Sliders (Row 3, 5, 7) Adjustments --- */
         .products-slider {
             font-family: Georgia, 'Times New Roman', Times, serif;
@@ -1270,27 +1315,27 @@
         }
 
         .foot-panel2 {
-           
+
             flex-direction: column;
             height: auto;
-           
+
             padding: 20px 20px 10px 40px;
             justify-content: flex-start;
         }
 
         .foot-panel2 ul {
             margin-right: 0;
-           
+
             margin-bottom: 30px;
         }
 
         .foot-panel2 p {
-          
+
             margin-bottom: 5px;
         }
 
         .foot-panel2 a {
-           
+
             margin-top: 5px;
             font-size: 0.9rem;
         }
@@ -1305,7 +1350,7 @@
         }
 
         .foot-panel3 .logo {
-           
+
             height: 40px;
             width: 80px;
         }
@@ -1313,19 +1358,19 @@
         .foot-panel3 .language-selector {
             margin-left: 0;
             margin-top: 15px;
-           
+
             font-size: 0.9rem;
         }
 
         /* 3. Final Copyright Panel (foot-panel4) */
         .foot-panel4 {
             height: auto;
-           
+
             padding: 15px 10px;
         }
 
         .foot-panel4 .pages {
-            
+
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1334,7 +1379,7 @@
 
         .foot-panel4 .pages a {
             margin: 5px 0;
-           
+
             font-size: 0.8rem;
         }
     }
@@ -1342,7 +1387,7 @@
 
 
 
-     /* --- Media Query for Tablets and Smaller Laptops (Max Width: 1024px) --- */
+    /* --- Media Query for Tablets and Smaller Laptops (Max Width: 1024px) --- */
     @media screen and (min-width: 450px) and (max-width: 1024px) {
 
         /* Search Bar Adjustment */
@@ -1363,22 +1408,24 @@
             /* Vertically center items in the row */
         }
 
-       
-          .sidebar {
+
+        .sidebar {
             height: 100%;
-            width: 0; /* शुरू में छिपा हुआ */
+            width: 0;
+            /* शुरू में छिपा हुआ */
             position: fixed;
-            z-index: 300; /* सबसे ऊपर */
-                order: -4;
+            z-index: 300;
+            /* सबसे ऊपर */
+            order: -4;
             left: 0;
             background-color: #fff;
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         }
 
-       
+
 
         /* Logo */
         .nav-logo {
@@ -1477,4 +1524,3 @@
 
 
     }
-

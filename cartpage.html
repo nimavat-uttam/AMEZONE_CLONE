@@ -1,511 +1,660 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>3D Premium Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href='stayle.css' />
+    
     <style>
-/* --- Cart Page Styles --- */
+        
+        /* 1. Base Styles & 3D Background */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #e0e5ec;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(195, 207, 226, 0.5) 0, transparent 50%),
+                radial-gradient(at 50% 0%, rgba(245, 247, 250, 0.5) 0, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(255, 224, 224, 0.3) 0, transparent 50%);
+            background-attachment: fixed;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            overflow-x: hidden;
+        }
 
-.cart-page-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff; /* White background for the main content area */
-    border-radius: 8px;
-}
+        /* 2. Main 3D Container */
+        .cart-page-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #e0e5ec;
+            box-shadow: 20px 20px 60px #bec3be, -20px -20px 60px #ffffff;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.cart-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
+        .cart-header {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.cart-header h1 {
-    font-size: 1.8rem;
-    font-weight: 400;
-}
+        .cart-main-content {
+            display: flex;
+            gap: 30px;
+        }
 
-.cart-header p {
-    font-size: 1.1rem;
-    font-weight: 700;
-}
+        /* 3. Items List Section */
+        .cart-items-list {
+            flex-grow: 1;
+        }
 
-.cart-main-content {
-    display: flex;
-    gap: 20px;
-}
+        .cart-item-card {
+            background: #e0e5ec;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 6px 6px 12px #bec3be, -6px -6px 12px #ffffff;
+            transition: all 0.4s ease;
+        }
 
-/* Left Section: Items List */
-.cart-items-list {
-    flex-grow: 1;
-    min-width: 60%;
-}
+        .cart-item-card:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 15px 15px 30px #bec3be, -15px -15px 30px #ffffff;
+        }
 
-.cart-item-card {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
-    /* border-bottom: 1px solid #eee; */
-}
+        .item-details {
+            display: flex;
+            gap: 20px;
+        }
 
-.item-details {
-    display: flex;
-    gap: 20px;
-}
+        .item-img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
 
-.item-img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain; /* ensures image fits without cropping */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-}
+        .item-info h3 {
+            color: #007185;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
 
-.item-info h3 {
-    font-size: 1.1rem;
-    color: #007185;
-    margin-bottom: 5px;
-}
+        .in-stock {
+            color: #007600;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
 
-.item-info h3:hover {
-    color: #C7511F; /* Amazon Link hover color */
-    cursor: pointer;
-}
+        .qty-select {
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: none;
+            background: #e0e5ec;
+            box-shadow: inset 2px 2px 5px #bec3be, inset -2px -2px 5px #ffffff;
+        }
 
-.in-stock {
-    color: #007600;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+        /* 4. Checkout Sidebar 3D */
+        .cart-checkout-summary-3d {
+            width: 320px;
+            background: #e0e5ec;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 15px 15px 30px #bec3be, -15px -15px 30px #ffffff;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
 
-.eligible {
-    font-size: 0.8rem;
-}
+        /* 3D Delivery & Progress */
+        .truck-box {
+            width: 45px;
+            height: 45px;
+            background: #007600;
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 4px 8px rgba(0, 118, 0, 0.3);
+            margin-bottom: 10px;
+        }
 
-.gift-option {
-    font-size: 0.8rem;
-    margin: 10px 0;
-}
+        .progress-3d {
+            height: 8px;
+            background: #d1d9e6;
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
+            margin: 10px 0;
+            overflow: hidden;
+        }
 
-.item-actions {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 0.85rem;
-}
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #1e7e34);
+        }
 
-.qty-select {
-    padding: 5px 10px;
-    border-radius: 7px;
-    background: #f0f2f2;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
+        .total-amount {
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+        }
 
-.action-button {
-    background: none;
-    border: none;
-    color: #007185;
-    cursor: pointer;
-    padding: 0 8px;
-    font-size: 0.85rem;
-}
+        /* 5. 3D Buttons */
+        .proceed-button-3d {
+            width: 100%;
+            padding: 14px;
+            margin-top: 50px;
+            background: #ffc400;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #111;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #cc9d00;
+            /* Bottom edge for 3D */
+            transition: all 0.1s;
+            margin-bottom: 15px;
+        }
 
-.action-button:hover {
-    text-decoration: underline;
-    color: #C7511F;
-}
+        .proceed-button-3d:active {
+            transform: translateY(4px);
+            /* Button dabne ka effect */
+            box-shadow: 0 2px 0 #cc9d00;
+        }
 
-.action-divider {
-    color: #ddd;
-    padding: 0 5px;
-}
+        .emi-button-3d {
+            width: 100%;
+            padding: 12px;
+            background: #e0e5ec;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #565959;
+            box-shadow: 4px 4px 8px #bec3be,
+                -4px -4px 8px #ffffff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-.item-price {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #111;
-}
+        .emi-button-3d:hover {
+            box-shadow: inset 2px 2px 5px #bec3be,
+                inset -2px -2px 5px #ffffff;
+        }
 
-.cart-divider {
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
-    margin: 15px 0;
-}
+        /* Footer Full Width Fix */
+        footer {
+            width: 100%;
 
-.subtotal-summary-bottom {
-    text-align: right;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding-top: 10px;
-}
+            background-color: #232f3e;
+        }
 
+        .back-to-top {
+            height: 50px;
+            background-color: #37475a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
 
-/* Right Section: Checkout Summary */
-.cart-checkout-summary {
-    width: 300px;
-    background-color: #f0f2f2; /* Light gray box for checkout */
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    height: fit-content;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
+        .foot-panel2 {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 50px 0;
+            color: white;
+            background-color: #232f3e;
+        }
 
-.delivery-message {
-    color: #007600;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
+        .foot-panel2 a {
+            display: block;
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
 
-.subtotal-heading {
-    font-size: 1.15rem;
-    font-weight: 400;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
+/* --- Professional Mobile Alignment (Clean Look) --- */
 
-.total-amount {
-    font-weight: 700;
-}
-
-.proceed-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ffc400; /* Amazon's primary button color */
-    border: 1px solid #ffae00;
-    border-radius: 7px;
-    color: #111;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.proceed-button:hover {
-    background-color: #ffb800;
-}
-
-.emi-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #f7f9fa; 
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    color: #111;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-
-/* --- Responsive Adjustments for Mobile --- */
-@media screen and (max-width: 768px) {
-    .cart-main-content {
-        flex-direction: column; /* Stacks vertically on mobile/tablet */
+@media (max-width: 768px) {
+    /* 1. Page Margin aur Background */
+    body {
+        background: #e0e5ec; /* Background clean rakha */
     }
 
-    .cart-checkout-summary {
-        width: 100%; /* Full width for the summary box */
-        order: -1; /* Summary box ko sabse upar laate hain */
+    .cart-page-container {
+        margin: 15px auto;
+        padding: 20px;
+        max-width: 95%; /* Screen ke dono side thodi jagah chhodi */
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px #bec3be, -10px -10px 20px #ffffff;
+    }
+
+    /* 2. Header Alignment */
+    .cart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .cart-header h1 {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    /* 3. Layout Direction (Items pehle, Summary baad mein) */
+    /* Agar summary pehle chahiye toh column-reverse use karein */
+    .cart-main-content {
+        flex-direction: column; 
+        gap: 25px;
+    }
+
+    /* 4. Cart Item Card ko 'Line' mein set kiya */
+    .cart-item-card {
+        flex-direction: column; /* Mobile par vertical best lagta hai */
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .item-details {
+        flex-direction: row; /* Image aur Text ek line mein */
+        gap: 15px;
+        width: 100%;
     }
 
     .item-img {
-        width: 100px;
+        width: 100px; /* Choti screen ke liye size perfect kiya */
         height: 100px;
+        min-width: 100px;
     }
-    
-    .cart-item-card {
-        flex-direction: column; /* Items stack horizontally, now vertical on mobile */
+
+    .item-info h3 {
+        font-size: 0.95rem; /* Text wrap na ho isliye chota kiya */
+        line-height: 1.3;
+    }
+
+    /* 5. Buttons aur Actions ek line mein */
+    .item-actions {
+        display: flex;
+        flex-wrap: wrap; /* Jagah kam ho toh niche aa jaye */
+        gap: 8px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .qty-select {
+        flex-grow: 1; /* Saare buttons barabar size ke dikhengi */
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    /* 6. Item Price Alignment */
+    .item-price {
+        width: 100%;
+        text-align: right;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 10px;
+    }
+
+    /* 7. Checkout Summary Box (Sabse Clean) */
+    .cart-checkout-summary-3d {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .total-amount {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* 8. Hide Non-essential Navbar Items (for Clean Look) */
+    .nav-address, .nav-language, .nav-return, .panel-dels {
+        display: none;
+    }
+
+    /* Footer adjustments */
+    .foot-panel2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Do-do ki line mein links */
+        gap: 20px;
+        padding: 30px 15px;
+    }
+}
+
+/* Extra small screens ke liye */
+@media (max-width: 400px) {
+    .item-details {
+        flex-direction: column; /* Bahut chhote phone pe sab vertical */
+        align-items: center;
+        text-align: center;
     }
     
     .item-price {
-        text-align: right;
-        margin-top: 10px;
-    }
-
-    .subtotal-summary-bottom {
         text-align: center;
-        margin-top: 20px;
     }
 }
-/* --- Footer Styles --- */
-
-/* Back to Top (Your existing style is used, making it full width) */
-.back-to-top {
-    /* height: 100%; width: 100%; background-color: #37475A; color: white; */
-    height: 50px; /* हाइट थोड़ी कम कर दी */
-    background-color: #37475a;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    cursor: pointer;
-    width: 100%;
-    margin: 0;
-}
-
-/* 2. Links Section (foot-panel2) */
-.foot-panel2 {
-    background-color: #222f3d;
-    color: white;
-    height: 300px; /* डेस्कटॉप के लिए हाइट */
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 50px;
-}
-
-.foot-panel2 ul {
-    /* Default spacing */
-    margin-right: 20px;
-}
-
-.foot-panel2 p {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.foot-panel2 a {
-    display: block; /* लिंक को एक के नीचे एक दिखाने के लिए */
-    font-size: 0.85rem;
-    margin-top: 10px;
-    color: #dddddd;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.foot-panel2 a:hover {
-    text-decoration: underline;
-}
-
-/* 3. Final Footer (foot-panel3) */
-.foot-panel3 {
-    background-color: #222f3d;
-    color: white;
-    border-top: 0.5px solid #3a4553;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.foot-panel3 .logo {
-    /* Amazon logo image should be set here */
-    background-image: url("amazon_logo.png"); /* Replace with actual logo path */
-    background-size: cover;
-    height: 50px;
-    width: 100px;
-}
-
-.foot-panel3 .language-selector {
-    margin-left: 50px;
-    padding: 7px 10px;
-    border: 1px solid #848888;
-    border-radius: 3px;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-/* 4. Final Copyright Panel (foot-panel4) */
-.foot-panel4 {
-    background-color: #0f1111;
-    color: white;
-    height: 80px;
-    font-size: 0.75rem;
-    text-align: center;
-    padding-top: 20px;
-}
-
-.foot-panel4 .pages a {
-    margin: 0 10px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #dddddd;
-}
-
-.foot-panel4 .pages a:hover {
-    text-decoration: underline;
-}
-
-.foot-panel4 .copyright {
-    padding-top: 5px;
-}
-
-
-    
-        </style>
+    </style>
 </head>
+
 <body>
 
+ <header>
+
+        <div class="navbar">
+            <div class="nav-logo  border4">
+                <a>
+                    <img src="logo.png" width="125" alt="">
+                </a>
+            </div>
 
 
-<div class="cart-page-container">
-    <div class="cart-header">
-        <h1>Shopping Cart</h1>
-        <p>Price</p>
-    </div>
-
-    <div class="cart-main-content">
-        <div class="cart-items-list">
-            
-            <div class="cart-item-card">
-                <div class="item-details">
-                    <img src="box-1_1.jpg" alt="Product 1" class="item-img">
-                    <div class="item-info">
-                        <h3> - Natural Titanium</h3>
-                        <p class="in-stock">In Stock</p>
-                        <p class="eligible">Eligible for FREE Shipping</p>
-                        <p class="gift-option">
-                            <input type="checkbox"> This will be a gift
+            <div class="nav-address border">
+                <p class="add-first"> Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>ALL</option>
+                </select>
+                <input placeholder="Search Amezone" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-language border3">
+                <div class="dropdown">
+                    <a class="dropbtn">
+                        <img src="ind.jpeg" width="22px" alt="">
+                        EN
+                        ▾</a>
+                    <div class="dropdown-content">
+                        <p>select language<br>
+                            <a><input type="radio" name="language" value="en" checked onchange="changeLanguage()">
+                                🇺🇸 English</a>
                         </p>
-                        <div class="item-actions">
-                            <select class="qty-select">
-                                <option value="1">Qty: 1</option>
-                                <option value="2">Qty: 2</option>
-                                <option value="3">Qty: 3</option>
-                            </select>
-                            <span class="action-divider">|</span>
-                            <button class="action-button">Delete</button>
-                            <span class="action-divider">|</span>
-                            <button class="action-button">Save for later</button>
-                        </div>
+                        <hr>
+                        <label><input type="radio" name="language" value="HI" onchange="changeLanguage()">
+                            <span>HI</span> Hindi</label><br>
+                        <label><input type="radio" name="language" value="es" onchange="changeLanguage()"> 🇪🇸
+                            Español</label><br>
+                        <label><input type="radio" name="language" value="fr" onchange="changeLanguage()"> 🇫🇷
+                            Français</label><br>
                     </div>
                 </div>
-                <div class="item-price">
-                    $1,199.00
+            </div>
+
+            <div class="me">
+                <div class="nav-singin border" onclick="window.location.href='u1.html'">
+
+                    <p><span>Hello, sign in</span></p>
+                    <p class="nav-second">Account &lists</p>
+
                 </div>
             </div>
-            
-            <hr class="cart-divider">
+            <div class="nav-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-second">& orders</p>
+            </div>
+            <div class="nav-cart border2">
+                <p class="cart-count">0</p>
+                <a href="cartpage.html"><i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span></a>
+            </div>
+            <div class="u1">
+                <a href="u1.html">Sign in<i class="fa-solid fa-user"></i></a>
+            </div>
 
-            <div class="cart-item-card">
-                <div class="item-details">
-                    <img src="box-3-3.jpg" alt="Product 2" class="item-img">
-                    <div class="item-info">
-                        <h3>New Launch - Noise Buds VS102 Neo TWS Earbuds (Black)</h3>
-                        <p class="in-stock">In Stock</p>
-                        <p class="eligible">Eligible for FREE Shipping</p>
-                        <p class="gift-option">
-                            <input type="checkbox"> This will be a gift
-                        </p>
-                        <div class="item-actions">
-                            <select class="qty-select">
-                                <option value="1">Qty: 1</option>
-                                <option value="2">Qty: 2</option>
-                            </select>
-                            <span class="action-divider">|</span>
-                            <button class="action-button">Delete</button>
-                            <span class="action-divider">|</span>
-                            <button class="action-button">Save for later</button>
+            <div class="menu-icon" onclick="openNav()">☰</div>
+            <div id="mySidebar" class="sidebar">
+                <a class="close-btn" onclick="closeNav()">×</a>
+
+                <div class="main-content">
+                    <h2>👋 Hello, Sign In</h2>
+                    <a href="u1.html">Your Account</a>
+                    <a href=" #">Today's Deals</a>
+                    <a href="#">Customer Service</a>
+                    <hr>
+                    <a href="#">Returns & Orders</a>
+                    <a href=" #">Settings</a>
+                    <section id="signin-page" class="card">
+                        <h2>👤 Sign In / Register</h2>
+                        <p>Welcome back! Sign in for the best experience.</p>
+                        <input type="email" placeholder="Email or Mobile Number"
+                            style="width: 100%; padding: 8px; margin-top: 10px;">
+                        <button class="amazon-btn-yellow">Continue</button>
+                    </section>
+
+                    <section id="returns-page" class="card">
+                        <h2>🔄 Returns and Orders</h2>
+                        <p>Track your orders, manage returns and view purchase history easily.</p>
+                        <button style="background-color: #EAEAEA;">View All Orders</button>
+                    </section>
+                </div>
+
+            </div>
+            <nav class="bottom-nav">
+                <div class="nav-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i>🏠</i> Home</div>
+                <a href="cartpage.html" class="nav-item"><i>🛒</i> Cart</a>
+                <a href="#" class="nav-item"><i>💬</i> Chat</a>
+                <a href="#" class="nav-item"><i>☰</i> Menu</a>
+
+            </nav>
+
+
+
+        </div>
+        <div class="panel">
+            <div class="panel-all border1">
+                <i class="fa-solid fa-bars"></i>
+                ALL
+            </div>
+            <div class="panel-ops">
+                <dive class="border">Today's Deals</dive>
+                <dive class="border">Prime video</dive>
+                <dive class="border">Registry</dive>
+                <dive class="border">gift cards</dive>
+                <dive class="border">Customer Service</dive>
+                <dive class="border">Sell</dive>
+            </div>
+            <div class="panel-dels border1">
+                Shop deals in Electronics
+            </div>
+
+    </header>
+
+    <div class="cart-page-container">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <p>Price</p>
+        </div>
+
+        <div class="cart-main-content">
+            <div class="cart-items-list">
+
+                <div class="cart-item-card">
+                    <div class="item-details">
+                        <img src="box-1_1.jpg" alt="Product 1" class="item-img">
+                        <div class="item-info">
+                            <h3> - Natural Titanium</h3>
+                            <p class="in-stock">In Stock</p>
+                            <p class="eligible">Eligible for FREE Shipping</p>
+                            <p class="gift-option">
+                                <input type="checkbox"> This will be a gift
+                            </p>
+                            <div class="item-actions">
+                                <select class="qty-select">
+                                    <option value="1">Qty: 1</option>
+                                    <option value="2">Qty: 2</option>
+                                    <option value="3">Qty: 3</option>
+                                </select>
+                                <span class="action-divider">|</span>
+                                <button class="qty-select">Delete</button>
+                                <span class="action-divider">|</span>
+                                <button class="qty-select">Save for later</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="item-price">
+                        $1,199.00
+                    </div>
                 </div>
-                <div class="item-price">
-                    $19.99
+
+                <hr class="cart-divider">
+
+                <div class="cart-item-card">
+                    <div class="item-details">
+                        <img src="box-3-3.jpg" alt="Product 2" class="item-img">
+                        <div class="item-info">
+                            <h3>New Launch - Noise Buds VS102 Neo TWS Earbuds (Black)</h3>
+                            <p class="in-stock">In Stock</p>
+                            <p class="eligible">Eligible for FREE Shipping</p>
+                            <p class="gift-option">
+                                <input type="checkbox"> This will be a gift
+                            </p>
+                            <div class="item-actions">
+                                <select class="qty-select">
+                                    <option value="1">Qty: 1</option>
+                                    <option value="2">Qty: 2</option>
+                                </select>
+                                <span class="action-divider">|</span>
+                                <button class="qty-select">Delete</button>
+                                <span class="action-divider">|</span>
+                                <button class="qty-select">Save for later</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        $19.99
+                    </div>
                 </div>
+
+                <div class="subtotal-summary-bottom">
+                    Subtotal (2 items): <span class="total-amount">$1,218.99</span>
+                </div>
+
             </div>
 
-            <div class="subtotal-summary-bottom">
-                Subtotal (2 items): <span class="total-amount">$1,218.99</span>
+            <div class="cart-checkout-summary-3d">
+                <div class="delivery-card-modern">
+                    <div class="truck-box">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="delivery-details">
+                        <p class="status-msg">Eligible for FREE Delivery</p>
+                        <div class="3d-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="delivery-sub">🎉 Your order is ready to ship!</p>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    
+
+                    <button class="proceed-button-3d">Proceed to Buy</button>
+                    <button class="emi-button-3d">
+                        <i class="fa-solid fa-credit-card"></i> EMI Available
+                    </button>
+                </div>
             </div>
-
-        </div>
-
-        <div class="cart-checkout-summary">
-            <p class="delivery-message">
-                <i class="fa-solid fa-check-circle"></i> Your order is eligible for Free Delivery.
-            </p>
-            <h2 class="subtotal-heading">
-                Subtotal (2 items): <span class="total-amount">$1,218.99</span>
-            </h2>
-            <button class="proceed-button">Proceed to Buy</button>
-            <button class="emi-button">EMI Available</button>
         </div>
     </div>
-</div>
-<button id="checkout">CLEARE</button>
-<footer>
-    <div class="back-to-top">
-        <p>Back to top</p>
+    <button id="checkout">CLEARE</button>
+    <footer>
+
+       <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <p> Back to top</p>
     </div>
 
-    <div class="foot-panel2">
-        <ul>
-            <p>Get to Know Us</p>
-            <a>Careers</a>
-            <a>Blog</a>
-            <a>About Amazon</a>
-            <a>Investor Relations</a>
-            <a>Amazon Devices</a>
-            <a>Amazon Science</a>
-        </ul>
-        <ul>
-            <p>Make Money with Us</p>
-            <a>Sell products on Amazon</a>
-            <a>Sell on Amazon Business</a>
-            <a>Sell apps on Amazon</a>
-            <a>Become an Affiliate</a>
-            <a>Advertise Your Products</a>
-            <a>Self-Publish with Us</a>
-            <a>Host an Amazon Hub</a>
-            <a>See More Earning Opportunities</a>
-        </ul>
-        <ul>
-            <p>Amazon Payment Products</p>
-            <a>Amazon Business Card</a>
-            <a>Shop with Points</a>
-            <a>Reload Your Balance</a>
-            <a>Amazon Currency Converter</a>
-        </ul>
-        <ul>
-            <p>Let Us Help You</p>
-            <a>Amazon and COVID-19</a>
-            <a>Your Account</a>
-            <a>Your Orders</a>
-            <a>Shipping Rates & Policies</a>
-            <a>Returns & Replacements</a>
-            <a>Manage Your Content and Devices</a>
-            <a>Amazon Assistant</a>
-            <a>Help</a>
-        </ul>
-    </div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Advertise Your Products</a>
+                <a>Self-Publish with Us</a>
+                <a>Host an Amazon Hub</a>
+                <a>See More Earning Opportunities</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shipping Rates & Policies</a>
+                <a>Returns & Replacements</a>
+                <a>Manage Your Content and Devices</a>
+                <a>Amazon Assistant</a>
+                <a>Help</a>
+            </ul>
+        </div>
 
-    <div class="foot-panel3">
-        <div class="logo"></div>
-        <div class="language-selector">
-            <i class="fa-solid fa-globe"></i>
-            English
+        <div class="foot-panel3">
+            <div class="logo"></div>
+            <div class="language-selector">
+                <i class="fa-solid fa-globe"></i>
+                English
+            </div>
         </div>
-    </div>
-    
-    <div class="foot-panel4">
-        <div class="pages">
-            <a>Conditions of Use</a>
-            <a>Privacy Notice</a>
-            <a>Your Ads Privacy Choices</a>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2024, Amazon.com, Inc. or its affiliates
+            </div>
         </div>
-        <div class="copyright">
-            © 1996-2024, Amazon.com, Inc. or its affiliates
-        </div>
-    </div>
-</footer>
-<script src="script.js"></script>
-   
-  
+    </footer>
+    <script src="script.js"></script>
+
+
 
 </body>
+
 </html>
-
-
-
