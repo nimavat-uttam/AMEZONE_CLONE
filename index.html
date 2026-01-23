@@ -119,13 +119,19 @@
                 </div>
 
             </div>
-            <nav class="bottom-nav">
-                <div class="nav-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i>🏠</i> Home</div>
-                <a href="cartpage.html" class="nav-item"><i>🛒</i> Cart</a>
-                <a href="#" class="nav-item"><i>💬</i> Chat</a>
-                <a href="#" class="nav-item"><i>☰</i> Menu</a>
+           <nav class="bottom-nav">
+    <div id="circularMenu" class="circular-menu">
+        <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+           <i class="fa-solid fa-bars"></i>
+        </a>
 
-            </nav>
+        <menu class="items-wrapper">
+            <a href="javascript:void(0)" class="menu-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">🏠</a>
+            <a href="#" class="menu-item">💬</a>
+            <a href="cartpage.html" class="menu-item">🛒</a>
+            <a href="#" class="menu-item">👤</a> </menu>
+    </div>
+</nav>
 
 
 

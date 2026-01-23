@@ -269,28 +269,23 @@ fetchCart();
  const languages = {
             en: { 
                 name: "English", 
-              //  flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADUSURBVHgB7ZQxCsJAEEDnChYWVhH8gL2FjV/wB4JFPmBjYSkIfkEsrCzEykYQxMJCBIuACBKl0EJFzE6yu8mRhNzC7MMls7tzO5uFEP8EfV6lBdAAGPl0juMYoih6qS3LEnzfF8MwFGyapgLzPGeapkLXdQXTNGV6jqJIaJqmYOQ4DpnjOCRs2xaapiHLskxwr9cTbBiGgmmaXg6SJGFxHAtZlgm2LEvB8zx/DofDcz6f0+VyeSzLki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3Lki3LkuEbfAHs1VZrZyaP3QAAAABJRU5ErkJggg==",
-                message: "Language has been changed to English."
+                 message: "Language has been changed to English."
             },
             hi: { 
                 name: "हिन्दी", 
-             //   flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACzSURBVHgB7dRBCoJQFAXQgwcIa9OoRYsGQbtI2vQnLfqSRkGDRkGjBg2Cho0aN4jEwHUH74IzOHAHcjjvZds2fAJ9sAm6oAlqoADuwAU4AzlHhGEI0zRh2zY8z0OapsiyDGmawvM8OI6DKIoEm6YpwzRNAUmSgK7rMqyqCkVRYDAYII5j1HWNH8dxjLIs0TQNer0ewjDEaDSCruuCoygSrOu6DC3LkuF0OkW320WSJBiPxx/Xtm0H0+l01el0Xv1+X3C/3xdsGIYMLcuS4Ww2g67pOJ1OmM/n/7m2n/ANcMJWbUd3a7wAAAAASUVORK5CYII=",
-                message: "भाषा हिन्दी में बदल गई है।"
+               message: "भाषा हिन्दी में बदल गई है।"
             },
             es: { 
                 name: "Español", 
-              //  flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFkSURBVHgBpVWxTsJAFP5ut8qlS5kYfQJ9Ah2Y9AX0CRx9Amd8A0aewMEncGQ0Dt1IiAMxMSYG44BBAglw3fWuV7hC29DyJXe9vt/9+ndXAPhvUNJ6vR5kWQZFUUBrDd/3S7zZbFZAkiSw1mI4HL6kaSqurq6+4J9BSVdVVen3+1itVhiNRojjGNPpFLPZDDc3NxiPx6Xg4+NjITgYDEj0K7rd7kmapo/z+VxwkiTl1ul0sF6vy3wymRTK7u7u7l9xgaenJ/FZqKqKZrOJ5+dnTKdT3N7ewvM8OOeQ5znq9TparVbZQxZ4GjabzQqPRqOCmYiiqKp5Pp+j3W6Xgiz42S2hqsqrPGl2Oh3UajUYYxDHMdbr9ZsF5uf7jNw/Y4x7fX2tjkYjW6vVLH9S4XC46XQ6VlUVw8Tm8/mX9UAhLk69Xm/0+/1X/lyWy+V2sVgYz/O2jUZj22w2bbvd1lzner2mvDO3s9nsfLFY/L4l7gT8vX9s+RsF/7e48Ef7DOicwx+BoijwAe6D/QuwN1ZUAAAAAElFTkSuQmCC",
                 message: "Idioma cambiado a Español."
             },
             fr: { 
                 name: "Français", 
-               // flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC6SURBVHgB7ZWhDcIwFEW/TRCcgF3oAgzBCsAqwAZswAjsAiuwA7sBK3TCCfFz1FgpB2eQq75k+ct/4sSRgPNBQBfUQAHEwBXYACsgTZmWZYm6rmHbNrz3iOOIOI7w3qNpGnRdB2MMpJQpU0oppNYaQgjc73eUZZkz3W43eJ5nuK6bMyVJgq7r4JxDUfxcsWmaOEkwTRNFURSv2Hq91n3ff8VWq5UehsFcLpe3Tf4D/9HkDfgAkx9XVMbIuI4AAAAASUVORK5CYII=",
-                message: "Langue changée en Français."
+                 message: "Langue changée en Français."
             },
             de: { 
                 name: "Deutsch", 
-              //  flag: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEdSURBVHgBrVWxbcJADPUuHaBD5g7ZgA3YgA3YgA3YgA1gAzZgA1iAARiADWAAhkhVpEqVqlTq4Nx7dpxzcEx+6eX+znfnO5/PcP4hjUYD2u02dLtd6PV60O/3YTgcwmQyKY7T6bQ4j0YjGA6H0Ov1oNvtwmAwKGpQ88NhTSaTMZlMYDqdwmw2K0KSJBuRZRmkaQpJkhQ1qEHN1sZ8Pi9CQhQhIQpIRJJqhRQFrtPpFIWEDgqFhEhEguqIqqJqqlZ1W6FqVbsy1G+lT5LqiJoFbNv+9n3/z3Gcf9d1C9i2XYTrun+WZRWha9D7LcuyX3zAQtd1/2ez2W8URX/4EwRBEaPR6AeDsc/n8x88Yi1q8Jq2bb8zxm5R9IZCiSK6RuGjEIKuWYu12I+9FEWPJHxF4TOJzCi8R9HlcvmNm1cU1mI/9uIafAvyfCbhBQkvKbpB0dvb2zeuX1FUi/1bFvIMZ7PZ/Xg8vh0Oh7f9fv+23W5vN5vN7Xq9vl2tVrfr9fp2s9ncNpvN7X6/v+12u9t+v79tt9vbxWKBmh+O7+vuOP4B7lNV1cHlUsUAAAAASUVORK5CYII=",
-                message: "Sprache auf Deutsch geändert."
+               message: "Sprache auf Deutsch geändert."
             }
         };
 
@@ -374,3 +369,4 @@ fetchCart();
                 }
             }
         }
+

@@ -1030,7 +1030,90 @@
             background-color: white;
             border-top: 1px solid black;
         }
+        /* --- EQUAL DISTANCE 3D CIRCULAR MENU --- */
+.circular-menu {
+    position: fixed;
+    bottom: 1.5em;
+    left: 1.5em;
+    z-index: 9999;
+}
 
+/* Main Button (☰) */
+.circular-menu .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #232f3e, #1a232d);
+    color: #ffc400;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px #bebebe, -4px -4px 10px #ffffff;
+    font-size: 22px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Menu Items (Equal Spacing Logic) */
+.circular-menu .menu-item {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(35, 47, 62, 0.95);
+    backdrop-filter: blur(8px);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.2s;
+}
+
+.circular-menu.active .menu-item {
+    opacity: 1;
+}
+
+
+
+/* 1. Home (90 degree - Seedha Upar) */
+.circular-menu.active .menu-item:nth-child(1) { 
+    transform: translate3d(0, -95px, 0); 
+}
+
+/* 2. Chat (60 degree - Beech mein) */
+.circular-menu.active .menu-item:nth-child(2) { 
+    transform: translate3d(48px, -82px, 0); 
+}
+
+/* 3. Cart (30 degree - Beech mein) */
+.circular-menu.active .menu-item:nth-child(3) { 
+    transform: translate3d(82px, -48px, 0); 
+}
+
+/* 4. Profile (0 degree - Seedha Right side) */
+.circular-menu.active .menu-item:nth-child(4) { 
+    transform: translate3d(95px, 0, 0); 
+}
+
+/* Button Active State */
+.circular-menu.active .floating-btn {
+    transform: rotate(135deg);
+    background: #ffc400;
+    color: #232f3e;
+}
+
+
+.circular-menu .floating-btn:active {
+    transform: scale(0.85);
+}
 
 
         .nav-item {
