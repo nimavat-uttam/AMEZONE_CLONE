@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -39,34 +40,45 @@
             </div>
             <div class="nav-language border3">
                 <div class="dropdown">
-                    <a class="dropbtn">
-                        <img src="ind.jpeg" width="22px" alt="">
-                        EN
-                        ▾</a>
+                    <button class="dropbtn">
+                        <img src="ind.jpeg" width="22px" alt="flag">
+                        EN ▾
+                    </button>
                     <div class="dropdown-content">
-                        <p>select language<br>
-                            <a><input type="radio" name="language" value="en" checked onchange="changeLanguage()">
-                                🇺🇸 English</a>
-                        </p>
-                        <hr>
-                        <label><input type="radio" name="language" value="HI" onchange="changeLanguage()">
-                            <span>HI</span> Hindi</label><br>
-                        <label><input type="radio" name="language" value="es" onchange="changeLanguage()"> 🇪🇸
-                            Español</label><br>
-                        <label><input type="radio" name="language" value="fr" onchange="changeLanguage()"> 🇫🇷
-                            Français</label><br>
+                        <p>Select Language</p>
+                        <label>
+                            <input type="radio" name="language" value="en" checked onchange="changeLanguage()">
+                            🇺🇸 English
+                        </label>
+                        <label>
+                            <input type="radio" name="language" value="hi" onchange="changeLanguage()">
+                            🇮🇳 Hindi
+                        </label>
+                        <label>
+                            <input type="radio" name="language" value="es" onchange="changeLanguage()">
+                            🇪🇸 Español
+                        </label>
+                        <label>
+                            <input type="radio" name="language" value="fr" onchange="changeLanguage()">
+                            🇫🇷 Français
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="me">
+                <div class="nav-singin border">
+                    <p><span>Hello, sign in</span></p>
+                    <p class="nav-second">Account & lists</p>
+
+                    <div class="signin-hover-box">
+                        <button class="neu-btn" onclick="window.location.href='u1.html'">Sign in</button>
+                        <p>New customer? <a href="u1.html">Start here</a></p>
                     </div>
                 </div>
             </div>
 
-            <div class="me">
-                <div class="nav-singin border" onclick="window.location.href='u1.html'">
-
-                    <p><span>Hello, sign in</span></p>
-                    <p class="nav-second">Account &lists</p>
-
-                </div>
-            </div>
             <div class="nav-return border">
                 <p><span>Returns</span></p>
                 <p class="nav-second">& orders</p>

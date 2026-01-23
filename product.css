@@ -394,14 +394,15 @@ a {
     text-align: start;
     background: white;
 }
+
 /* --- Media Query for Tablet and Mobile Devices (Max Width: 1024px) --- */
 @media screen and (max-width: 1024px) {
 
     /* 1. Main Layout: Stacking Columns Vertically */
     .product-display {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 10px;
-        gap: 20px; 
+        gap: 20px;
     }
 
     /* Purchase Box (.product-d-purchase) - Goes to the TOP on mobile */
@@ -410,7 +411,7 @@ a {
         max-width: 100%;
         margin: 0;
         order: 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     /* Details Section (.product-d-details) - Full Width */
@@ -418,42 +419,45 @@ a {
         width: 100%;
         padding: 0 5px;
         margin: -1;
-        border-right: none; /* साइड में दिखने वाली लाइन हटा दें */
+        border-right: none;
+        /* साइड में दिखने वाली लाइन हटा दें */
         order: 0;
     }
 
 
     /* 2. Image Section Adjustments (Thumbnails + Main Image) */
     .product-d-image {
-        width: 100%; 
-        justify-content: center; 
-        gap: 10px; 
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
     }
-    
+
     .product-icons {
-        width: 15%; 
+        width: 15%;
         gap: 5px;
     }
-    
+
     .product-main-image {
-        width: 80%; 
+        width: 80%;
         margin: 0;
         padding: 5px;
-        border: none; 
+        border: none;
     }
 
     /* 3. Text and Components Refinement */
-    
+
     /* Product Title */
     .product-title {
-        font-size: 1.4rem; /* टाइटल थोड़ा छोटा करें */
+        font-size: 1.4rem;
+        /* टाइटल थोड़ा छोटा करें */
         font-weight: 500;
         margin-bottom: 8px;
     }
-    
+
     /* Product Price Display */
     .product-d-details .product-price h2 span {
-        font-size: 2rem; /* मुख्य मूल्य का साइज़ ठीक रखें */
+        font-size: 2rem;
+        /* मुख्य मूल्य का साइज़ ठीक रखें */
     }
 
     /* Color Options - Align to left and stack nicely */
@@ -461,11 +465,13 @@ a {
         justify-content: flex-start;
         gap: 8px;
     }
+
     .option {
-        width: 55px; /* ऑप्शन बॉक्स का साइज़ एडजस्ट करें */
+        width: 55px;
+        /* ऑप्शन बॉक्स का साइज़ एडजस्ट करें */
         padding: 3px;
     }
-    
+
     .option p {
         font-size: 0.65rem;
     }
@@ -474,6 +480,7 @@ a {
     .about b {
         font-size: 1.2rem;
     }
+
     .text p {
         font-size: 0.85rem;
     }
@@ -481,27 +488,33 @@ a {
 
 /* --- Specific Adjustments for Small Mobile Screens (Max Width: 600px) --- */
 @media screen and (max-width: 600px) {
-    
+
     .product-d-image {
-        flex-direction: column; /* मुख्य इमेज और थंबनेल को ऊपर-नीचे स्टैक करें */
+        flex-direction: column;
+        /* मुख्य इमेज और थंबनेल को ऊपर-नीचे स्टैक करें */
         align-items: center;
     }
-    
+
     .product-main-image {
-        width: 90%; /* मुख्य इमेज को और बड़ी जगह दें */
-        order: -1; /* इसे थंबनेल से ऊपर लाएँ */
+        width: 90%;
+        /* मुख्य इमेज को और बड़ी जगह दें */
+        order: -1;
+        /* इसे थंबनेल से ऊपर लाएँ */
     }
-    
+
     .product-icons {
-        width: 90%; /* थंबनेल को पूरी चौड़ाई पर हॉरिजॉन्टल (horizontal) दिखने दें */
+        width: 90%;
+        /* थंबनेल को पूरी चौड़ाई पर हॉरिजॉन्टल (horizontal) दिखने दें */
         flex-direction: row;
-        flex-wrap: wrap; /* अगर ज़्यादा थंबनेल हों तो उन्हें रैप करें */
+        flex-wrap: wrap;
+        /* अगर ज़्यादा थंबनेल हों तो उन्हें रैप करें */
         justify-content: center;
         margin-top: 10px;
     }
-    
+
     .product-icons img {
-        width: 50px; /* थंबनेल का साइज़ फिक्स करें */
+        width: 50px;
+        /* थंबनेल का साइज़ फिक्स करें */
         height: 50px;
     }
 }
