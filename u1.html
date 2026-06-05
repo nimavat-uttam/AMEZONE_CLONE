@@ -1,138 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Amezona</title>
-    <link rel="stylesheet" href="styles.css">
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Sign In - Amezone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-.logo-si a{
-    align-items: center;
-    margin-left: 110px;
-    
-}
-.container label{
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-}
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-.container:hover{
-     box-shadow: 10px  10px 10px rgba(0,0,0,0.4);
-}
-.container small{
-    margin-top: 10px;
-}
-.container input:hover{
-    box-shadow: 10px 10px 10px rgb(0,0,0,0.4);
-    
-}
-.container a{
-        margin-right: 110px;
-}
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 10px;
-    text-align: left;
-}
-
-input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e68a00;
-}
-
-small {
-    color: #666;
-    font-size: 0.8em;
-}
-
-a {
-    color: #007185;
-    text-decoration: none;
-}
-</style>
-</head>
-<body>
-    <div class="logo-si">
-        <a>
-            <img src="amazon-logo-.png" height="100px" width="120px">
-        </a>
-    
-    <div class="container">
-        <h1>Sign in or create account
-</h1>
-        <form id="signup-form">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" minlength="8" required>
-            <small>Passwords must be at least 8 characters.</small>
-
-            <button type="submit">Create Account</button>
-        </form>
-        <p>Already have an account?</p><a href="#">Sign In</a>
-    </div></div>
-    <script src="script.js">
-
-document.getElementById('signup-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (password.length < 8) {
-        alert('Password must be at least 8 characters.');
-        return;
+  <style>
+    /* ===== ORIGINAL CSS SAME RAKHYO ===== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
     }
 
-    // Simulate account creation (replace with real backend logic)
-    alert(`Account created for ${name} with email ${email}!`);
-    // Here you could send data to a server via fetch() or AJAX
-});
-</script>
+    .logo-si {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-si a {
+      align-items: center;
+      margin-left: 110px;
+    }
+
+    .container label {
+      font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .container:hover {
+      box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+    }
+
+    .container small {
+      margin-top: 10px;
+    }
+
+    .container input:hover {
+      box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+    }
+
+    .container a {
+      margin-right: 110px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    input {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e68a00;
+    }
+
+    small {
+      color: #666;
+      font-size: 0.8em;
+    }
+
+    a {
+      color: #007185;
+      text-decoration: none;
+    }
+
+    /* ===== NAVA CSS - SIRF JARURI ===== */
+    .tabs {
+      display: flex;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+    .tab {
+      flex: 1;
+      padding: 9px;
+      font-size: 13px;
+      cursor: pointer;
+      background: #f3f3f3;
+      color: #555;
+      border: none;
+      margin-top: 0;
+      font-family: Arial, sans-serif;
+      transition: all 0.2s;
+    }
+    .tab.active { background: #ff9900; color: #fff; font-weight: bold; }
+    .tab:hover  { background: #ffa500; color: #fff; }
+
+    .msg {
+      padding: 9px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      text-align: left;
+      display: none;
+    }
+    .msg.success { background:#dff0d8; color:#3c763d; border:1px solid #c3e6cb; display:block; }
+    .msg.error   { background:#fde8e8; color:#c0392b; border:1px solid #f5c6c6; display:block; }
+    .msg.info    { background:#d9edf7; color:#31708f; border:1px solid #b8daff; display:block; }
+
+    .btn-ai {
+      margin-top: 10px;
+      padding: 9px;
+      background-color: #fff;
+      color: #111;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .btn-ai:hover { background-color: #f3f3f3; }
+
+    .ai-box {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 12px;
+      color: #555;
+      margin-top: 8px;
+      text-align: left;
+      min-height: 40px;
+      line-height: 1.5;
+    }
+
+    .divider {
+      text-align: center;
+      font-size: 11px;
+      color: #999;
+      margin: 12px 0 6px;
+      position: relative;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: #ddd;
+    }
+    .divider::before { left: 0; }
+    .divider::after  { right: 0; }
+
+    .spinner {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border: 2px solid #ddd;
+      border-top-color: #ff9900;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Welcome card */
+    .welcome-card {
+      display: none;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .welcome-card:hover { box-shadow: 10px 10px 10px rgba(0,0,0,0.4); }
+    .avatar {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #ff9900;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .welcome-card h2 { color: #333; font-size: 18px; margin-bottom: 6px; }
+    .welcome-card p  { color: #777; font-size: 13px; margin-bottom: 16px; }
+    .btn-logout {
+      margin-top: 10px;
+      padding: 9px;
+      background: #f3f3f3;
+      color: #111;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .btn-logout:hover { background: #e0e0e0; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="logo-si">
+    <a href="index.html">
+      <img src="logo.png" width="125" alt="Amezone">
+    </a>
+
+    <!-- AUTH CARD -->
+    <div class="container" id="auth-card">
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('signin')">Sign In</button>
+        <button class="tab" onclick="switchTab('signup')">Create Account</button>
+      </div>
+
+      <div class="msg" id="msg"></div>
+
+      <!-- SIGN IN -->
+      <div id="signin-section">
+        <h1>Sign In</h1>
+        <form onsubmit="doSignIn(event)">
+          <label for="si-email">Email</label>
+          <input type="email" id="si-email" placeholder="Enter your email" required>
+
+          <label for="si-pass">Password</label>
+          <input type="password" id="si-pass" placeholder="At least 8 characters" required>
+          <small><a onclick="forgotPassword()" style="margin-right:0;cursor:pointer">Forgot password?</a></small>
+
+          <button type="submit" id="signin-btn">Sign In</button>
+        </form>
+
+        <div class="divider">need help?</div>
+        <button class="btn-ai" onclick="askAI()">
+          <i class="fa-solid fa-robot" style="color:#ff9900;font-size:12px"></i>
+          Ask Claude for help
+        </button>
+        <div class="ai-box" id="ai-reply">Claude will give you login tips here...</div>
+
+        <p style="margin-top:14px;font-size:13px;">New customer?
+          <a onclick="switchTab('signup')" style="margin-right:0;cursor:pointer">Start here</a>
+        </p>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="signup-section" style="display:none">
+        <h1>Create account</h1>
+        <form onsubmit="doSignUp(event)">
+          <label for="su-name">Your name</label>
+          <input type="text" id="su-name" placeholder="First and last name" required>
+
+          <label for="su-email">Email</label>
+          <input type="email" id="su-email" placeholder="Enter your email" required>
+
+          <label for="su-phone">Mobile <small>(optional)</small></label>
+          <input type="tel" id="su-phone" placeholder="+91 98765 43210">
+
+          <label for="su-pass">Password</label>
+          <input type="password" id="su-pass" placeholder="At least 8 characters" required>
+          <small>Passwords must be at least 8 characters.</small>
+
+          <label for="su-pass2">Re-enter password</label>
+          <input type="password" id="su-pass2" placeholder="Confirm password" required>
+
+          <button type="submit" id="signup-btn">Create your account</button>
+        </form>
+
+        <p style="margin-top:14px;font-size:13px;">
+          Already have an account?
+          <a onclick="switchTab('signin')" style="margin-right:0;cursor:pointer">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- WELCOME CARD -->
+    <div class="welcome-card" id="welcome-card">
+      <div class="avatar" id="avatar-initials">A</div>
+      <h2 id="welcome-name">Welcome!</h2>
+      <p id="welcome-email">user@example.com</p>
+      <button onclick="window.location.href='index.html'">Continue Shopping</button>
+      <button class="btn-logout" onclick="doLogout()">Sign Out</button>
+    </div>
+
+  </div>
+
+  <script>
+    // ===== API BASE URL =====
+    const API_BASE = 'http://localhost:5000/api/auth';
+
+    // ===== PAGE LOAD: already logged in check =====
+    window.addEventListener('DOMContentLoaded', () => {
+      const user = getStoredUser();
+      if (user) showWelcome(user);
+    });
+
+    // ===== STORAGE HELPERS =====
+    function getStoredUser() {
+      return JSON.parse(localStorage.getItem('amezone_user') || 'null');
+    }
+    function storeUser(user, token) {
+      localStorage.setItem('amezone_user', JSON.stringify(user));
+      localStorage.setItem('amezone_token', token);
+    }
+    function clearStorage() {
+      localStorage.removeItem('amezone_user');
+      localStorage.removeItem('amezone_token');
+    }
+
+    // ===== SWITCH TAB =====
+    function switchTab(tab) {
+      document.querySelectorAll('.tab').forEach((t, i) => {
+        t.classList.toggle('active',
+          (tab === 'signin' && i === 0) || (tab === 'signup' && i === 1));
+      });
+      document.getElementById('signin-section').style.display = tab === 'signin' ? 'block' : 'none';
+      document.getElementById('signup-section').style.display = tab === 'signup' ? 'block' : 'none';
+      clearMsg();
+    }
+
+    // ===== MESSAGES =====
+    function showMsg(text, type) {
+      const m = document.getElementById('msg');
+      m.textContent = text;
+      m.className = 'msg ' + type;
+    }
+    function clearMsg() {
+      const m = document.getElementById('msg');
+      m.className = 'msg';
+    }
+
+    // ===== SIGN IN =====
+    async function doSignIn(e) {
+      e.preventDefault();
+      const email = document.getElementById('si-email').value.trim();
+      const pass  = document.getElementById('si-pass').value;
+      const btn   = document.getElementById('signin-btn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Signing in...';
+
+      try {
+        const res  = await fetch(API_BASE + '/signin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password: pass })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          storeUser(data.user, data.token);
+          showMsg('Welcome back, ' + data.user.name + '! Redirecting...', 'success');
+          setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+        } else {
+          showMsg(data.message || 'Sign in failed.', 'error');
+        }
+      } catch (err) {
+        showMsg('Cannot connect to server. Make sure server.js is running (node server.js)', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+      }
+    }
+
+    // ===== SIGN UP =====
+    async function doSignUp(e) {
+      e.preventDefault();
+      const name  = document.getElementById('su-name').value.trim();
+      const email = document.getElementById('su-email').value.trim();
+      const phone = document.getElementById('su-phone').value.trim();
+      const pass  = document.getElementById('su-pass').value;
+      const pass2 = document.getElementById('su-pass2').value;
+      const btn   = document.getElementById('signup-btn');
+
+      if (pass !== pass2) { showMsg('Passwords do not match.', 'error'); return; }
+      if (pass.length < 8) { showMsg('Password must be at least 8 characters.', 'error'); return; }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Creating account...';
+
+      try {
+        const res  = await fetch(API_BASE + '/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password: pass, phone })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          storeUser(data.user, data.token);
+          showMsg('Account created! Redirecting...', 'success');
+          setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+        } else {
+          showMsg(data.message || 'Signup failed.', 'error');
+        }
+      } catch (err) {
+        showMsg('Cannot connect to server. Make sure server.js is running (node server.js)', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Create your account';
+      }
+    }
+
+    // ===== FORGOT PASSWORD =====
+    function forgotPassword() {
+      const email = document.getElementById('si-email').value.trim();
+      if (!email) {
+        showMsg('Enter your email above first, then click Forgot password.', 'info');
+        return;
+      }
+      showMsg('Reset link sent to ' + email + ' (demo — real email needs nodemailer in server.js).', 'info');
+    }
+
+    // ===== LOGOUT =====
+    function doLogout() {
+      clearStorage();
+      document.getElementById('welcome-card').style.display = 'none';
+      document.getElementById('auth-card').style.display    = 'block';
+    }
+
+    // ===== WELCOME =====
+    function showWelcome(user) {
+      document.getElementById('auth-card').style.display    = 'none';
+      document.getElementById('welcome-card').style.display = 'block';
+      document.getElementById('welcome-name').textContent   = 'Welcome, ' + user.name + '!';
+      document.getElementById('welcome-email').textContent  = user.email;
+      const initials = user.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+      document.getElementById('avatar-initials').textContent = initials;
+    }
+
+    // ===== CLAUDE AI HELP =====
+    async function askAI() {
+      const email = document.getElementById('si-email').value.trim();
+      const box   = document.getElementById('ai-reply');
+
+      box.innerHTML = '<span class="spinner"></span> Claude is thinking...';
+
+      const prompt = email
+        ? `User on "Amezone" shopping site having trouble signing in with: ${email}. Give 2-3 short friendly tips. Plain text only.`
+        : `User on "Amezone" shopping site needs sign in help. Give 2-3 short friendly tips. Plain text only.`;
+
+      try {
+        const res  = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 200,
+            messages: [{ role: 'user', content: prompt }]
+          })
+        });
+        const data = await res.json();
+        box.textContent = data.content?.[0]?.text || 'No response.';
+      } catch (err) {
+        box.textContent = 'Could not connect to Claude.';
+      }
+    }
+  </script>
 </body>
 </html>
